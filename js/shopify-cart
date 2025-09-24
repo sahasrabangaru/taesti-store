@@ -1,6 +1,5 @@
 window.taestiAddToCart = async function(productId, variantId, quantity = 1) {
   const client = window.taestiShopifyClient();
-  // create a cart if none, then add item
   if (!window.taestiCart) {
     window.taestiCart = await client.checkout.create();
   }
@@ -8,7 +7,6 @@ window.taestiAddToCart = async function(productId, variantId, quantity = 1) {
     variantId: btoa(`gid://shopify/ProductVariant/${variantId}`),
     quantity
   }]);
-  // Update UI
   taestiOpenCartOverlay(window.taestiCart);
 };
 function taestiOpenCartOverlay(cart) {
