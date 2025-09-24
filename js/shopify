@@ -1,4 +1,3 @@
-// ShopifyBuy client singleton (uses your real credentials)
 window.taestiShopifyClient = (function () {
   const domain = 'vk009q-ne.myshopify.com';
   const token = '68658f29831d54af40b0163aed05afa5';
