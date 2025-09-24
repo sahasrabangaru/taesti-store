@@ -1,14 +1,14 @@
-// Map product/variant IDs to images and names for cart display
+// Map variant IDs to product info for cart display
 const TAESTI_PRODUCTS = {
   "44536169431087": {
     name: "Tæsti Bar Bracelet — Gold",
     image: "bracelet.jpg",
-    price: "$35" // You can update this to pull from Shopify if you want
+    price: "35.00"
   },
   "44536169758767": {
     name: "Refill Pack",
     image: "refill.jpg",
-    price: "$10"
+    price: "10.00"
   }
 };
 
@@ -35,18 +35,45 @@ function taestiOpenCartOverlay(cart) {
     drawer.setAttribute('aria-hidden', 'false');
     drawer.querySelector('.cart-contents').innerHTML =
       cart.lineItems.map(item => {
-        const prod = TAESTI_PRODUCTS[item.variant.id.split("/").pop()];
+        const variantId = item.variant.id.split("/").pop();
+        const prod = TAESTI_PRODUCTS[variantId];
         return `
           <div style="display:flex;align-items:center;margin-bottom:1.2rem;">
             <img src="${prod ? prod.image : ''}" alt="${item.title}" style="width:60px;height:60px;border-radius:12px;box-shadow:0 2px 8px #e754801a;margin-right:1rem;">
             <div>
               <div style="font-weight:bold;">${prod ? prod.name : item.title} &times;${item.quantity}</div>
-              <div style="color:#E75480;font-weight:700;">${item.variant.price ? "$" + item.variant.price : prod ? prod.price : ""}</div>
+              <div style="color:#E75480;font-weight:700;">$${prod ? prod.price : item.variant.price}</div>
             </div>
           </div>
         `;
       }).join('') +
-      `<div style="margin-top:1.4rem;"><strong>Subtotal:</strong> $${cart.subtotalPrice}</div>`;
+      `<div style="margin-top:1.4rem;"><strong>Subtotal:</strong> $${cart.subtotalPrice}</div>
+       <div style="margin-top:2rem;">
+        <button class="checkout-btn" style="background:#E75480;color:#fff;font-size:1.2rem;padding:1rem 2.2rem;border-radius:9999px;border:none;cursor:pointer;font-weight:700;" onclick="openEmbeddedCheckout()">Checkout</button>
+       </div>`;
+  }
+}
+
+function openEmbeddedCheckout() {
+  const cart = window.taestiCart;
+  if (cart && cart.webUrl) {
+    // Show iframe modal with Shopify checkout
+    const checkoutModal = document.createElement('div');
+    checkoutModal.style.position = 'fixed';
+    checkoutModal.style.top = '0';
+    checkoutModal.style.left = '0';
+    checkoutModal.style.width = '100vw';
+    checkoutModal.style.height = '100vh';
+    checkoutModal.style.background = 'rgba(0,0,0,0.5)';
+    checkoutModal.style.display = 'flex';
+    checkoutModal.style.justifyContent = 'center';
+    checkoutModal.style.alignItems = 'center';
+    checkoutModal.style.zIndex = '9999';
+    checkoutModal.innerHTML = `
+      <iframe src="${cart.webUrl}" style="width:90vw;height:90vh;border-radius:18px;border:none;background:#fff;"></iframe>
+      <button style="position:absolute;top:32px;right:32px;font-size:2rem;background:#fff;border:none;color:#E75480;padding:0.5rem 1rem;border-radius:50%;cursor:pointer" onclick="this.parentElement.remove()">&times;</button>
+    `;
+    document.body.appendChild(checkoutModal);
   }
 }
 
