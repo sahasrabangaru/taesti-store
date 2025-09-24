@@ -1,5 +1,5 @@
-// Hamburger menu and Account button routing
 document.addEventListener('DOMContentLoaded', function () {
+  // Hamburger menu
   const burger = document.querySelector('.taesti-burger');
   const navLinks = document.querySelector('.taesti-nav-center');
   if (burger && navLinks) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
-  // Account icon routing: always go to Shopify login (Shopify will redirect if logged in)
+  // Account icon routing: always go to Shopify login
   const profileBtn = document.querySelector('.taesti-profile-btn');
   if (profileBtn) {
     profileBtn.addEventListener('click', function () {
