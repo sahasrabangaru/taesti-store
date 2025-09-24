@@ -1,7 +1,11 @@
+/* --- UPGRADED DESIGN & RESPONSIVE/ACCESSIBILITY ENHANCEMENTS --- */
+
+/* Typography, Color, Button, Spacing, Responsive, Accessibility, Layered! */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;600&family=Raleway:ital,wght@1,700&display=swap');
 
 :root {
   --pink: #E75480;
+  --pink-dark: #c03964;
   --text: #111;
   --bg: #fff;
   --muted: #F8F6F7;
@@ -17,29 +21,22 @@ body {
   color: var(--text);
   font-family: 'Montserrat', 'Raleway', Arial, sans-serif;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7; /* Improved for readability */
   margin: 0;
   -webkit-font-smoothing: antialiased;
 }
+
 h1, h2, h3 {
   margin: 0 0 18px 0;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 900;
+  letter-spacing: 0.03em;
 }
-h1 {
-  font-size: clamp(56px, 7vw, 72px);
-  line-height: 1.07;
-  text-transform: uppercase;
-}
-h2 {
-  font-size: clamp(36px, 5vw, 48px);
-  line-height: 1.13;
-  text-transform: uppercase;
-}
-h3 {
-  font-size: 28px;
-  font-weight: 700;
-}
+
+h1 { font-size: clamp(56px, 7vw, 72px); }
+h2 { font-size: clamp(36px, 5vw, 48px); }
+h3 { font-size: 28px; font-weight: 700; }
+
 .highlight {
   font-style: italic;
   color: var(--pink);
@@ -47,32 +44,36 @@ h3 {
   font-weight: 700;
   background: none;
 }
+
+/* --- Button Harmonization --- */
 .btn-primary {
   background: var(--pink);
   color: #fff;
   font-weight: 600;
   font-family: 'Montserrat', Arial, sans-serif;
   border-radius: 9999px;
-  padding: 14px 32px;
+  padding: 16px 36px; /* Slightly larger for mobile */
   font-size: 1.13rem;
   border: none;
   cursor: pointer;
-  transition: opacity .18s, box-shadow .18s;
+  transition: opacity .18s, box-shadow .18s, transform .18s;
   box-shadow: 0 2px 16px rgba(231,84,128,0.12);
   text-decoration: none;
   display: inline-block;
 }
 .btn-primary:hover, .btn-primary:focus {
   opacity: .92;
-  outline: 2px solid var(--pink);
+  transform: scale(1.04);
+  outline: 2px solid var(--pink-dark);
   outline-offset: 2px;
 }
+
 .btn-ghost {
   background: none;
   color: var(--pink);
   border: 2px solid var(--pink);
   border-radius: 9999px;
-  padding: 14px 32px;
+  padding: 16px 36px;
   font-weight: 600;
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.13rem;
@@ -82,12 +83,12 @@ h3 {
 .btn-ghost:hover, .btn-ghost:focus {
   background: var(--pink);
   color: #fff;
-  border-color: var(--pink);
+  border-color: var(--pink-dark);
   outline: 2px solid var(--pink);
   outline-offset: 2px;
 }
 
-/* Header/Navbar */
+/* --- Header/Navbar --- */
 header.taesti-navbar {
   position: sticky;
   top: 0; left: 0; width: 100vw;
@@ -146,6 +147,11 @@ header.taesti-navbar {
   border-bottom: 2px solid transparent;
   transition: color .2s, border-color .2s;
 }
+.taesti-link.active,
+.taesti-link[aria-current="page"] {
+  color: var(--pink);
+  border-bottom: 2px solid var(--pink);
+}
 .taesti-link:hover, .taesti-link:focus {
   color: var(--pink);
   border-bottom: 2px solid var(--pink);
@@ -165,6 +171,9 @@ header.taesti-navbar {
   transition: box-shadow .18s, transform .18s, background .18s;
   outline: none;
   display: flex; align-items: center;
+}
+.taesti-profile-btn.active img {
+  box-shadow: 0 0 0 3px var(--pink);
 }
 .taesti-profile-btn img {
   width: 44px;
@@ -414,6 +423,7 @@ header.taesti-navbar {
 .cart-drawer.open { transform: translateX(0); }
 .close-cart { position: absolute; top: 1.3rem; right: 1.3rem; background: none; border: none; font-size: 2rem;}
 .checkout-btn { display: inline-block; padding: 0.8rem 2.1rem; border: none; background: var(--pink); color: #fff; border-radius: 9999px; margin-top: 2rem; font-size: 1.18rem; font-weight:700; }
+.cart-subtotal { font-weight: bold; font-size: 1.25rem; margin-top: 1.5rem; }
 .cart-contents { margin-top: 2.5rem; font-size: 1.06rem; }
 
 footer.footer {
@@ -444,4 +454,38 @@ footer.footer {
   box-shadow: 0 2px 8px rgba(231,84,128,0.23);
   outline: 2px solid var(--pink);
   outline-offset: 2px;
+}
+
+/* --- ACCESSIBILITY & PERFORMANCE --- */
+img {
+  loading: lazy;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1em;
+}
+
+/* --- MEDIA QUERIES FOR RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .section { padding: 2rem 1rem; }
+  .product-card { padding: 1.1rem; min-height: 280px; }
+}
+@media (max-width: 700px) {
+  h1 { font-size: 2.2rem; }
+  .hero-content { max-width: 98vw; }
+  .product-list { grid-template-columns: 1fr; }
+  .btn-primary, .btn-ghost { width: 100%; }
+  .footer { padding: 2rem 1rem; }
+}
+
+/* --- TRANSITIONS FOR ENGAGING FLOW --- */
+.section,
+.product-card,
+.hero-content {
+  transition: box-shadow .18s, transform .18s;
+}
+
+/* --- FOOTER IMPROVEMENTS --- */
+.footer-links .footer-link.active {
+  color: var(--pink);
+  border-bottom: 2px solid var(--pink);
 }
