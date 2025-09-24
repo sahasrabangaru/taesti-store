@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop — Tæsti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 font-sans">
+  <nav><!-- Copy nav from index.html --></nav>
+  <main class="max-w-md mx-auto p-8">
+    <h2 class="text-2xl font-bold text-pink-600 mb-6">Shop Tæsti</h2>
+    <div id="bracelet-buy"></div>
+    <div id="refill-buy" class="mt-8"></div>
+  </main>
+  <footer><!-- Copy footer from index.html --></footer>
+  <!-- Shopify Buy Button SDK -->
+  <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+  <script>
+    var client = ShopifyBuy.buildClient({
+      domain: 'vk009q-ne.myshopify.com',
+      storefrontAccessToken: '26c600a7138f5c2494e6d82bd8d64f55',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '8068637884463',
+        node: document.getElementById('bracelet-buy'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: { /* styling can be adjusted later */ }
+      });
+      ui.createComponent('product', {
+        id: '8068637917231',
+        node: document.getElementById('refill-buy'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: { /* styling can be adjusted later */ }
+      });
+    });
+  </script>
+</body>
+</html>
