@@ -427,3 +427,21 @@ footer.footer {
   margin-right: auto;
   box-shadow: 0 2px 16px rgba(231,84,128,0.04);
 }
+.taesti-cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: box-shadow .18s, transform .18s, background .18s;
+  outline: none;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.taesti-cart-btn:focus, .taesti-cart-btn:hover {
+  transform: scale(1.07);
+  background: #ffe8f0;
+  box-shadow: 0 2px 8px rgba(231,84,128,0.23);
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
