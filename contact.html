@@ -5,83 +5,35 @@
   <title>Contact — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Contact Tæsti for support, questions, or newsletter signup." />
-  <meta property="og:title" content="Contact — Tæsti" />
-  <meta property="og:description" content="Contact Tæsti for support, questions, or newsletter signup." />
-  <meta property="og:image" content="bracelet.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="account-logo.png" />
   <link rel="stylesheet" href="global.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <script src="js/app.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="skip-link" href="#main">Skip to main content</a>
-    <nav class="navbar" aria-label="Primary">
-      <a class="brand" href="index.html" aria-label="Tæsti home">
-        <img src="taesti-logo.svg" alt="Tæsti pink logo" />
+  <header class="taesti-navbar" role="banner">
+    <nav class="taesti-nav" aria-label="Main navigation">
+      <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
+        Tæsti<span class="taesti-heart">&#10084;&#65039;</span>
       </a>
-      <div class="nav-links" role="menubar">
-        <a href="index.html" role="menuitem">Home</a>
-        <a href="shop.html" role="menuitem">Shop</a>
-        <a href="about.html" role="menuitem">About</a>
-        <a href="contact.html" role="menuitem" aria-current="page">Contact</a>
-      </div>
-      <div class="account-nav">
-        <a href="account.html" aria-label="Account">
-          <img src="account-logo.png" alt="Account" />
-        </a>
-      </div>
+      <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
+        <span class="taesti-burger-bar"></span>
+        <span class="taesti-burger-bar"></span>
+        <span class="taesti-burger-bar"></span>
+      </button>
+      <ul class="taesti-links" id="taesti-menu" role="menubar">
+        <li><a href="index.html" role="menuitem" aria-label="Home">Home</a></li>
+        <li><a href="shop.html" role="menuitem" aria-label="Shop">Shop</a></li>
+        <li><a href="about.html" role="menuitem" aria-label="About">About</a></li>
+        <li><a href="contact.html" role="menuitem" aria-label="Contact">Contact</a></li>
+      </ul>
+      <a href="account.html" class="taesti-account" aria-label="Account">
+        <img src="account-logo.png" alt="Account" />
+      </a>
     </nav>
   </header>
   <main id="main">
-    <section class="section" style="max-width:700px;">
-      <h1 class="headline-impact">Contact Us</h1>
-      <div class="tape">Questions? Support? Reach out anytime.</div>
-      <p><strong>Email:</strong> <a href="mailto:contact@taesti.org">contact@taesti.org</a></p>
-      <form id="contact-form" style="display:flex;flex-direction:column;gap:1rem;max-width:400px;">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button class="btn-primary" type="submit">Send Message</button>
-        <span id="contact-success" style="color:var(--hotPink);display:none;"></span>
-      </form>
-      <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e){
-          e.preventDefault();
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
-          const success = document.getElementById('contact-success');
-          if(!name || !email.match(/^[^@]+@[^@]+\.[^@]+$/) || !message){
-            success.textContent = "Please fill all fields.";
-            success.style.display = 'inline';
-            return;
-          }
-          success.textContent = "Message sent! We'll reply soon.";
-          success.style.display = 'inline';
-          e.target.reset();
-        });
-      </script>
-    </section>
-    <footer class="footer">
-      <form class="newsletter" id="nl">
-        <label for="nl-email">Get the Safer Night checklist</label>
-        <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
-        <button class="btn-primary" type="submit">Join</button>
-      </form>
-      <script>
-        document.getElementById('nl')?.addEventListener('submit',(e)=>{
-          e.preventDefault();
-          const email = document.getElementById('nl-email').value.trim();
-          if(!email) return;
-          alert('Thanks! Check your inbox.');
-          e.target.reset();
-        });
-      </script>
-    </footer>
+    <!-- Your contact content here -->
   </main>
 </body>
 </html>
