@@ -1,8 +1,24 @@
-/* --- Tæsti Navigation Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --brand-pink: #e75480;
+  --nav-padding: 20px;
+  --max-width: 1200px;
+  --border: 1px solid #eee;
+}
+
+body {
+  margin: 0;
+  background: #FAF7F5;
+  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Navigation bar */
 .taesti-navbar {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(231,84,128,0.05), 0 1px 0 #eee;
-  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(231,84,128,0.04), 0 1px 0 #eee;
+  padding: var(--nav-padding) 0 var(--nav-padding) 0;
   position: sticky;
   top: 0;
   z-index: 1001;
@@ -12,30 +28,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
 }
 
-/* Logo */
 .taesti-logo {
-  font-family: 'Montserrat', 'Raleway', Arial, sans-serif;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #e75480;
-  letter-spacing: 0.06em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--brand-pink);
+  letter-spacing: 0.07em;
   text-decoration: none;
   transition: color 0.2s;
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
 }
+.taesti-heart {
+  font-size: 1.6rem;
+  margin-left: .2rem;
+  color: var(--brand-pink);
+}
+
 .taesti-logo:focus, .taesti-logo:hover {
   color: #c03964;
-  outline: 2px solid #e75480;
+  outline: 2px solid var(--brand-pink);
   outline-offset: 2px;
 }
 
-/* Nav Links */
 .taesti-links {
   list-style: none;
   display: flex;
@@ -47,7 +69,7 @@
   align-items: center;
 }
 .taesti-links li a {
-  font-family: 'Montserrat', 'Raleway', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: #222;
@@ -58,13 +80,12 @@
   transition: color 0.18s, border-color 0.18s;
 }
 .taesti-links li a:focus, .taesti-links li a:hover {
-  color: #e75480;
-  border-bottom: 2px solid #e75480;
-  outline: 2px solid #e75480;
+  color: var(--brand-pink);
+  border-bottom: 2px solid var(--brand-pink);
+  outline: 2px solid var(--brand-pink);
   outline-offset: 2px;
 }
 
-/* Account Icon */
 .taesti-account {
   margin-left: 2rem;
   display: flex;
@@ -81,12 +102,12 @@
 .taesti-account:focus img,
 .taesti-account:hover img {
   transform: scale(1.10);
-  background: #e75480;
+  background: var(--brand-pink);
   box-shadow: 0 2px 8px rgba(231,84,128,0.19);
   outline: none;
 }
 
-/* Hamburger for mobile */
+/* Mobile hamburger */
 .taesti-burger {
   display: none;
   background: none;
@@ -101,9 +122,10 @@
   display: block;
   width: 26px;
   height: 3px;
-  background: #e75480;
+  background: var(--brand-pink);
   border-radius: 2px;
 }
+
 @media (max-width: 850px) {
   .taesti-links {
     display: none;
@@ -137,11 +159,6 @@
 .taesti-links li a:focus-visible,
 .taesti-account:focus-visible,
 .taesti-logo:focus-visible {
-  outline: 2px solid #e75480;
+  outline: 2px solid var(--brand-pink);
   outline-offset: 2px;
-}
-
-/* Padding for content below nav */
-body {
-  padding-top: var(--header-height);
 }
