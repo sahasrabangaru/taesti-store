@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Account — Tæsti</title>
+  <title>Account — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sign in to view your Tæsti order history, status, and manage purchases securely." />
-  <meta property="og:title" content="Your Account — Tæsti" />
-  <meta property="og:description" content="Sign in to view your Tæsti order history, status, and manage purchases securely." />
+  <meta name="description" content="Your Tæsti account and order dashboard." />
+  <meta property="og:title" content="Account — Tæsti" />
+  <meta property="og:description" content="Your Tæsti account and order dashboard." />
   <meta property="og:image" content="bracelet.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="account-logo.png" />
@@ -17,22 +17,26 @@
   <header class="site-header">
     <a class="skip-link" href="#main">Skip to main content</a>
     <nav class="navbar" aria-label="Primary">
-      <a class="brand" href="/"><img src="account-logo.png" alt="Tæsti home"></a>
+      <a class="brand" href="index.html" aria-label="Tæsti home">
+        <img src="taesti-logo.svg" alt="Tæsti pink logo" />
+      </a>
       <div class="nav-links" role="menubar">
-        <a href="/" role="menuitem">Home</a>
+        <a href="index.html" role="menuitem">Home</a>
         <a href="shop.html" role="menuitem">Shop</a>
         <a href="about.html" role="menuitem">About</a>
         <a href="contact.html" role="menuitem">Contact</a>
-        <a href="account.html" role="menuitem" aria-current="page">My Orders</a>
-        <a href="/account/login" role="menuitem">Sign in</a>
-        <a href="/account/register" role="menuitem">Register</a>
+      </div>
+      <div class="account-nav">
+        <a href="account.html" aria-label="Account">
+          <img src="account-logo.png" alt="Account" />
+        </a>
       </div>
     </nav>
   </header>
   <main id="main">
     <section class="section" style="max-width:600px;">
       <h1 class="headline-impact">Your Account</h1>
-      <p>Sign in to view your order history, status, and manage purchases securely.</p>
+      <p>Sign in to view your order history and manage purchases securely.</p>
       <div style="display:flex;gap:1rem;margin:2rem 0;">
         <a class="btn-primary" id="btn-login" href="/account/login">Sign In</a>
         <a class="btn-ghost" id="btn-register" href="/account/register">Register</a>
