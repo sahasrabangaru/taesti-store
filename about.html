@@ -10,9 +10,10 @@
   <meta property="og:image" content="bracelet.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="bracelet.jpg" />
+  <link rel="canonical" href="https://taesti.org/about.html" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="global.css" />
-  <link rel="canonical" href="https://taesti.org/about.html" />
+  <script src="/js/app.js" defer></script>
   <style>
     .about-main {max-width: 900px; margin: 0 auto; padding-top: 5rem; padding-bottom: 5rem;}
     .headline-impact {font-family: "Bebas Neue", Anton, Impact, sans-serif; letter-spacing: -.02em; line-height: .9; font-weight: bold; text-transform: uppercase;}
@@ -24,11 +25,10 @@
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header role="banner" class="site-header sticky top-0 z-50" id="site-header">
+  <header role="banner" class="site-header" id="site-header">
     <nav class="container" style="display:flex;align-items:center;justify-content:space-between;padding:2rem 0;">
-      <span class="headline-impact text-hotPink" style="font-size:2.2rem;">TÆSTI</span>
-      <ul style="display:flex;gap:2.5rem;list-style:none;letter-spacing:.07em;text-transform:uppercase;font-size:.98rem;margin:0;">
+      <a class="logo" href="/index.html" aria-label="Tæsti home">TÆSTI</a>
+      <ul style="display:flex;gap:2.5rem;list-style:none;letter-spacing:.07em;text-transform:uppercase;font-size:.96rem;margin:0;">
         <li><a href="index.html" class="text-ink">Home</a></li>
         <li><a href="shop.html" class="text-ink">Shop</a></li>
         <li><a href="about.html" class="text-hotPink font-bold" aria-current="page">About</a></li>
@@ -80,41 +80,21 @@
       </div>
       <div>
         <h4 class="text-xs font-bold mb-2 uppercase">Newsletter</h4>
-        <form class="flex gap-2 mt-2" id="newsletter-form">
-          <label for="newsletter-email" style="font-weight:600;">Email:</label>
-          <input type="email" id="newsletter-email" name="email" required />
+        <form class="newsletter" id="nl">
+          <label for="nl-email">Get the Safer Night checklist</label>
+          <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
           <button class="btn-primary" type="submit">Join</button>
-          <span id="newsletter-error" style="color:var(--hotPink);display:none;"></span>
         </form>
-        <p class="mt-4 text-xs" style="color:rgba(17,17,17,.7);">Tæsti is a consumer aid, not a medical device.</p>
       </div>
     </div>
     <div class="footer-flag">Refills Available</div>
   </footer>
   <script>
-    document.getElementById('newsletter-form').addEventListener('submit', function(e){
+    document.getElementById('nl')?.addEventListener('submit',(e)=>{
       e.preventDefault();
-      const email = document.getElementById('newsletter-email').value;
-      const error = document.getElementById('newsletter-error');
-      if(!email.match(/^[^@]+@[^@]+\.[^@]+$/)){
-        error.textContent = "Please enter a valid email.";
-        error.style.display = 'inline';
-        return;
-      }
-      error.style.display = 'none';
-      localStorage.setItem('newsletter-email', email);
-      error.textContent = "Thanks—check your inbox!";
-      error.style.display = 'inline';
-    });
-    document.addEventListener("scroll",function(){
-      var header = document.getElementById("site-header");
-      if(window.scrollY > 10){
-        header.style.background="var(--cream)";
-        header.style.borderBottom="1px solid #eee";
-      }else{
-        header.style.background="transparent";
-        header.style.borderBottom="none";
-      }
+      const email = document.getElementById('nl-email').value.trim();
+      if(!email) return;
+      alert('Thanks! Check your inbox.');
     });
   </script>
 </body>
