@@ -22,7 +22,7 @@
       <div class="taesti-nav-center">
         <a href="index.html" class="taesti-link">Home</a>
         <a href="shop.html" class="taesti-link">Shop</a>
-        <a href="about.html" class="taesti-link">About</a>
+        <a href="about.html" class="taesti-link active">About</a>
         <a href="contact.html" class="taesti-link">Contact</a>
       </div>
       <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
@@ -80,7 +80,7 @@
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="index.html" class="footer-link">Home</a>
           <a href="shop.html" class="footer-link">Shop</a>
-          <a href="about.html" class="footer-link">About</a>
+          <a href="about.html" class="footer-link active">About</a>
           <a href="contact.html" class="footer-link">Contact</a>
         </nav>
         <div class="footer-social">
@@ -107,19 +107,38 @@
       </div>
     </footer>
   </main>
-  <!-- Cart drawer with friendly checkout message -->
+  <!-- Cart drawer with friendly checkout message, improved subtotal section, single checkout button-->
   <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
     <button class="close-cart" aria-label="Close cart" onclick="
       this.closest('.cart-drawer').classList.remove('open');
       this.closest('.cart-drawer').setAttribute('aria-hidden','true');
     ">×</button>
     <div class="cart-contents"></div>
+    <div class="cart-subtotal" style="font-weight:bold; font-size:1.25rem; margin-top:1.5rem;">
+      Subtotal: $0.00
+    </div>
     <button class="checkout-btn" id="checkout-btn">Checkout</button>
     <span id="checkout-msg" style="display:none; color: var(--pink); margin-top: 1rem;">
       Your secure checkout will open in a new tab.
     </span>
   </div>
   <script>
+    // Remove duplicate/small checkout buttons from JS rendering logic if present elsewhere!
+    // Subtotal fix: Example for Shopify BuyButton SDK, replace this with your actual cart subtotal logic.
+    function updateCartDrawer(cart) {
+      // Assume cart object has lineItemsSubtotalPrice.amount or similar property.
+      var subtotal = 0;
+      if (cart && cart.lineItemsSubtotalPrice && cart.lineItemsSubtotalPrice.amount) {
+        subtotal = parseFloat(cart.lineItemsSubtotalPrice.amount);
+      } else if (cart && cart.items) {
+        subtotal = cart.items.reduce(function(sum, item) {
+          return sum + (parseFloat(item.price) * (item.quantity || 1));
+        }, 0);
+      }
+      document.querySelector('.cart-subtotal').textContent = 'Subtotal: $' + subtotal.toFixed(2);
+    }
+    // Example: call updateCartDrawer(cart) after cart updates.
+
     document.getElementById('checkout-btn').addEventListener('click', function() {
       var msg = document.getElementById('checkout-msg');
       msg.style.display = 'inline';
