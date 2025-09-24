@@ -14,23 +14,18 @@
   <script src="/js/app.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <!-- Use header.html block above, or copy directly here -->
-
   <header class="site-header">
     <a class="skip-link" href="#main">Skip to main content</a>
     <nav class="navbar" aria-label="Primary">
-      <a class="brand" href="/">
-        <img src="/assets/taesti-logo.svg" alt="Tæsti home">
-      </a>
+      <a class="brand" href="/"><img src="/assets/taesti-logo.svg" alt="Tæsti home"></a>
       <div class="nav-links" role="menubar">
-        <a role="menuitem" href="/">Home</a>
-        <a role="menuitem" href="/shop">Shop</a>
-        <a role="menuitem" href="/about">About</a>
-        <a role="menuitem" href="/contact">Contact</a>
-        <a role="menuitem" href="/account">My Orders</a>
-        <a role="menuitem" href="/account/login">Sign in</a>
-        <a role="menuitem" href="/account/register">Register</a>
+        <a href="/" role="menuitem">Home</a>
+        <a href="/shop" role="menuitem" aria-current="page">Shop</a>
+        <a href="/about" role="menuitem">About</a>
+        <a href="/contact" role="menuitem">Contact</a>
+        <a href="/account" role="menuitem">My Orders</a>
+        <a href="/account/login" role="menuitem">Sign in</a>
+        <a href="/account/register" role="menuitem">Register</a>
       </div>
     </nav>
   </header>
@@ -45,19 +40,20 @@
           </span>
         </div>
       </div>
-      <div class="product-card">
-        <img src="/assets/bracelet.jpg" alt="Tæsti silicone bracelet with test-strip pod" width="220" height="220" loading="eager">
-        <h2 class="headline-impact">Bar Bracelet</h2>
-        <p>Chic, refillable, and discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
-        <div id="product-component-1758566044400"></div>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="/assets/bracelet.jpg" alt="Tæsti silicone bracelet with test-strip pod" width="220" height="220" loading="eager">
+          <h2 class="headline-impact">Bar Bracelet</h2>
+          <p>Chic, refillable, and discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
+          <div id="product-component-1758566044400"></div>
+        </div>
+        <div class="product-card">
+          <img src="/assets/refill.jpg" alt="Refill Pack for Tæsti bracelet" width="220" height="220" loading="lazy">
+          <h2 class="headline-impact">Refill Pack</h2>
+          <p>Stay stocked and safe. Our refill packs fit all Tæsti bracelets and most other brands.</p>
+          <div id="product-component-1758566044401"></div>
+        </div>
       </div>
-      <div class="product-card">
-        <img src="/assets/refill.jpg" alt="Refill Pack for Tæsti bracelet" width="220" height="220" loading="lazy">
-        <h2 class="headline-impact">Refill Pack</h2>
-        <p>Stay stocked and safe. Our refill packs fit all Tæsti bracelets and most other brands.</p>
-        <div id="product-component-1758566044401"></div>
-      </div>
-      <!-- Cart Drawer -->
       <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
         <button class="close-cart" aria-label="Close cart" onclick="
           this.closest('.cart-drawer').classList.remove('open');
@@ -68,7 +64,6 @@
           <a class="checkout-btn" href="#" onclick="ShopifyBuy.UI.instance.components.cart[0].openCheckout(); return false;">Checkout</a>
         </div>
       </div>
-      <!-- Shopify Buy Button SDK -->
       <script>
       (function() {
         var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
@@ -95,9 +90,7 @@
                 product: {
                   buttonDestination: 'cart',
                   events: {
-                    addVariantToCart: function() {
-                      openCartDrawer();
-                    }
+                    addVariantToCart: function() { openCartDrawer(); }
                   }
                 },
                 cart: { popup: false }
@@ -111,9 +104,7 @@
                 product: {
                   buttonDestination: 'cart',
                   events: {
-                    addVariantToCart: function() {
-                      openCartDrawer();
-                    }
+                    addVariantToCart: function() { openCartDrawer(); }
                   }
                 },
                 cart: { popup: false }
