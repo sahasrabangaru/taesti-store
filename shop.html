@@ -29,10 +29,8 @@
   </style>
 </head>
 <body class="bg-taesti-light text-taesti-dark min-h-screen pt-28">
-  <!-- Navigation Bar -->
   <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
     <a href="index.html" class="flex items-center">
-      <img src="images/taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
       <span class="font-headline text-2xl font-extrabold text-taesti-pink tracking-wide">Tæsti</span>
     </a>
     <div class="hidden md:flex space-x-8 text-lg font-semibold">
@@ -47,29 +45,24 @@
       <span class="sr-only">Account</span>
     </a>
   </nav>
-
   <main class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-16 mt-4 pb-32">
     <h2 class="font-headline text-3xl font-bold text-taesti-pink mb-8 text-center">Shop Tæsti</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
       <!-- Bracelet Card -->
       <div class="bg-taesti-light rounded-2xl shadow-lg p-8 flex flex-col items-center">
         <img src="images/bracelet.jpg" alt="Bracelet" class="mb-4 rounded-xl shadow w-64" />
-        <!-- Shopify Buy Button ONLY (no manual price or description) -->
         <div id="bracelet-buy" class="mt-4 w-full"></div>
       </div>
       <!-- Refill Pack Card -->
       <div class="bg-taesti-light rounded-2xl shadow-lg p-8 flex flex-col items-center">
         <img src="images/refill.jpg" alt="Refill Pack" class="mb-4 rounded-xl shadow w-64" />
-        <!-- Shopify Buy Button ONLY (no manual price or description) -->
         <div id="refill-buy" class="mt-4 w-full"></div>
       </div>
     </div>
   </main>
-
   <footer class="bg-white text-center py-8 text-lg text-taesti-dark font-semibold border-t fixed w-full left-0 bottom-0">
     &copy; Tæsti 2025 &mdash; Fashion with a Purpose
   </footer>
-
   <!-- Shopify Buy Button SDK -->
   <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
   <script>
