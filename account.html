@@ -14,7 +14,7 @@
   <header class="taesti-navbar" role="banner">
     <nav class="taesti-nav" aria-label="Main navigation">
       <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
-        Tæsti<span class="taesti-heart">&#10084;&#65039;</span>
+        <img src="taesti-logo.svg" alt="Tæsti logo" />
       </a>
       <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
         <span class="taesti-burger-bar"></span>
@@ -33,7 +33,32 @@
     </nav>
   </header>
   <main id="main">
-    <!-- Your account content here -->
+    <section class="section">
+      <h2>Your Account</h2>
+      <p>Sign in to view your order history and manage purchases securely.</p>
+      <div style="display:flex;gap:1rem;margin:2rem 0;">
+        <a class="btn-primary" id="btn-login" href="/account/login">Sign In</a>
+        <a class="btn-ghost" id="btn-register" href="/account/register">Register</a>
+      </div>
+      <a id="link-orders" href="/account">Go to My Orders</a>
+      <p style="color:rgba(17,17,17,.7);font-size:.98em;">After signing in you’ll be redirected to your Shopify account dashboard.</p>
+    </section>
+    <footer class="footer">
+      <form class="newsletter" id="nl">
+        <label for="nl-email">Get the Safer Night checklist</label>
+        <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
+        <button class="btn-primary" type="submit">Join</button>
+      </form>
+      <script>
+        document.getElementById('nl')?.addEventListener('submit',(e)=>{
+          e.preventDefault();
+          const email = document.getElementById('nl-email').value.trim();
+          if(!email) return;
+          alert('Thanks! Check your inbox.');
+          e.target.reset();
+        });
+      </script>
+    </footer>
   </main>
 </body>
 </html>
