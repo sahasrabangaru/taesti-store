@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ... rest of your head ... -->
+  <meta charset="UTF-8" />
+  <title>Shop Tæsti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shop the Tæsti Bar Bracelet and Refill Packs. Stylish safety for every night out."/>
+  <link rel="stylesheet" href="global.css"/>
   <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
   <script src="js/shopify.js" defer></script>
   <script src="js/shopify-cart.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
 <body>
-  <!-- ...navbar/header as before... -->
-  <main>
+  <header class="taesti-navbar">
+    <nav class="taesti-nav" aria-label="Main navigation">
+      <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
+        Tæst<span class="logo-i">i<span class="logo-heart">♥</span></span>
+      </a>
+      <div class="taesti-nav-center">
+        <a href="index.html" class="taesti-link">Home</a>
+        <a href="shop.html" class="taesti-link">Shop</a>
+        <a href="about.html" class="taesti-link">About</a>
+        <a href="contact.html" class="taesti-link">Contact</a>
+      </div>
+      <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
+        <span class="taesti-burger-bar"></span>
+        <span class="taesti-burger-bar"></span>
+        <span class="taesti-burger-bar"></span>
+      </button>
+      <div class="taesti-nav-right">
+        <button class="taesti-profile-btn" aria-label="Account">
+          <img src="account-logo.png" alt="Account"/>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
     <section class="section">
       <h1 class="section-header">Shop <span class="highlight">Tæsti</span></h1>
       <div class="divider"></div>
       <div class="product-list">
         <div class="product-card" tabindex="0">
           <img src="bracelet.jpg" alt="Tæsti gold bar bracelet" loading="lazy">
-          <h3>Bar Bracelet (Gold)</h3>
+          <h3>Bar Bracelet <span class="highlight">(Gold)</span></h3>
           <p>Chic, refillable, discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
           <button class="btn-primary add-to-cart"
                   aria-label="Add Bar Bracelet (Gold) to Cart"
@@ -48,7 +74,9 @@
         </div>
       </div>
     </section>
-    <!-- ...footer... -->
+    <footer class="footer">
+      <!-- ...footer unchanged... -->
+    </footer>
   </main>
 </body>
 </html>
