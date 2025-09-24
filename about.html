@@ -5,51 +5,84 @@
   <title>About — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Learn the story, mission, and science behind Tæsti Bar Bracelet." />
-  <meta property="og:title" content="About — Tæsti" />
-  <meta property="og:description" content="Learn the story, mission, and science behind Tæsti Bar Bracelet." />
-  <meta property="og:image" content="bracelet.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="bracelet.jpg">
   <link rel="stylesheet" href="global.css">
+  <style>
+    .about-main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    .about-main h1 {
+      margin-bottom: 1.5rem;
+      font-size: 3rem;
+    }
+    .about-main h2 {
+      margin-top: 2.5rem;
+      margin-bottom: .6rem;
+      font-size: 2rem;
+    }
+    .about-main p, .about-main ul {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+      color: var(--ink);
+      max-width: 60ch;
+    }
+    .about-main ul {
+      margin-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .about-main li {
+      margin-bottom: .7rem;
+    }
+    /* Hide giant avatar */
+    #giant-avatar { display: none !important; }
+  </style>
 </head>
 <body>
+  <!-- Sticky Nav -->
   <header class="sticky top-0 z-50" style="background:transparent;">
-    <nav class="container flex items-center justify-between py-6">
-      <span class="headline-impact text-hotPink text-3xl tracking-tight">TÆSTI</span>
-      <ul class="flex items-center gap-7 uppercase text-xs" style="letter-spacing:.07em;">
+    <nav class="container" style="display:flex;align-items:center;justify-content:space-between;padding:2rem 0;">
+      <span class="headline-impact text-hotPink" style="font-size:2.2rem;">TÆSTI</span>
+      <ul style="display:flex;gap:2.5rem;list-style:none;letter-spacing:.07em;text-transform:uppercase;font-size:.98rem;margin:0;">
         <li><a href="index.html" class="text-ink">Home</a></li>
         <li><a href="shop.html" class="text-ink">Shop</a></li>
         <li><a href="about.html" class="text-hotPink font-bold" aria-current="page">About</a></li>
         <li><a href="contact.html" class="text-ink">Contact</a></li>
       </ul>
-      <img src="account-logo.png" alt="Account profile icon" class="h-8 w-8 object-cover rounded-full border-2 border-hotPink ml-4" />
+      <img src="account-logo.png" alt="Account profile icon" style="height:2.3rem;width:2.3rem;border-radius:50%;object-fit:cover;border:2px solid var(--hotPink);margin-left:.6rem;">
     </nav>
   </header>
-  <main class="section container max-w-prose mx-auto">
-    <h1 class="headline-impact mb-3 text-ink">About Tæsti</h1>
+
+  <main class="about-main">
+    <h1 class="headline-impact text-ink">About Tæsti</h1>
     <div class="text-hotPink text-xs uppercase mb-6 font-bold">Fashion with a purpose</div>
-    <div class="gap-major flex flex-col">
-      <p class="text-xl">Tæsti began with a simple but urgent question: how can we make nights out safer without sacrificing style? Too many students told us they felt stuck between carrying bulky safety kits or taking risks. We knew there had to be a better way.</p>
-      <p>So we designed the Tæsti Bar Bracelet—a chic, minimalist gold bracelet that hides a powerful secret: a slim compartment that carries drink test strips. With one small movement, you can discreetly test your drink for common drugs or allergens.</p>
-      <div>
-        <h2 class="headline-impact text-hotPink mb-2">Why It Matters</h2>
-        <p>College is supposed to be about connection, growth, and fun—not fear. But the reality is, situations can get risky fast. Tæsti exists to give you peace of mind and control, so you can focus on your friends, your laughter, your dance floor moves—whatever makes the night yours.</p>
-      </div>
-      <div>
-        <h2 class="headline-impact text-hotPink mb-2">Our Promise</h2>
-        <ul class="list-disc ml-6 mb-4">
-          <li class="mb-2"><strong>Discreet Design:</strong> Looks like jewelry, acts like protection.</li>
-          <li class="mb-2"><strong>Practical Safety:</strong> Standard 1×7 cm strips that fit into a sleek, refillable slot.</li>
-          <li class="mb-2"><strong>Student-Born:</strong> Created by young women who saw the problem first-hand.</li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="headline-impact text-hotPink mb-2">The Bigger Picture</h2>
-        <p>Tæsti isn’t just a bracelet—it’s a statement. It says my safety matters, my friends’ safety matters, and we all deserve tools that fit our lives.<br><br>
-        We’re starting with one bracelet, but our vision is bigger: a world where safety is stylish, accessible, and always within reach.</p>
-      </div>
-    </div>
+    <p>
+      Tæsti began with a simple but urgent question: how can we make nights out safer without sacrificing style? Too many students told us they felt stuck between carrying bulky safety kits or taking risks. We knew there had to be a better way.
+    </p>
+    <p>
+      So we designed the Tæsti Bar Bracelet—a chic, minimalist gold bracelet that hides a powerful secret: a slim compartment that carries drink test strips. With one small movement, you can discreetly test your drink for common drugs or allergens.
+    </p>
+    <h2 class="headline-impact text-hotPink">Why It Matters</h2>
+    <p>
+      College is supposed to be about connection, growth, and fun—not fear. But the reality is, situations can get risky fast. Tæsti exists to give you peace of mind and control, so you can focus on your friends, your laughter, your dance floor moves—whatever makes the night yours.
+    </p>
+    <h2 class="headline-impact text-hotPink">Our Promise</h2>
+    <ul>
+      <li><strong>Discreet Design:</strong> Looks like jewelry, acts like protection.</li>
+      <li><strong>Practical Safety:</strong> Standard 1×7 cm strips that fit into a sleek, refillable slot.</li>
+      <li><strong>Student-Born:</strong> Created by young women who saw the problem first-hand.</li>
+    </ul>
+    <h2 class="headline-impact text-hotPink">The Bigger Picture</h2>
+    <p>
+      Tæsti isn’t just a bracelet—it’s a statement. It says my safety matters, my friends’ safety matters, and we all deserve tools that fit our lives.<br>
+      We’re starting with one bracelet, but our vision is bigger: a world where safety is stylish, accessible, and always within reach.
+    </p>
   </main>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -58,7 +91,7 @@
       </div>
       <div>
         <h4 class="text-xs font-bold mb-2 uppercase">Links</h4>
-        <ul class="space-y-2 text-sm">
+        <ul class="space-y-2 text-sm" style="list-style:none;padding:0;">
           <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="contact.html">Contact</a></li>
