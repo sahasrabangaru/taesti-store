@@ -14,36 +14,35 @@
   <script src="/js/app.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <!-- Use header.html block above, or copy directly here -->
-
   <header class="site-header">
     <a class="skip-link" href="#main">Skip to main content</a>
     <nav class="navbar" aria-label="Primary">
-      <a class="brand" href="/">
-        <img src="/assets/taesti-logo.svg" alt="Tæsti home">
-      </a>
+      <a class="brand" href="/"><img src="/assets/taesti-logo.svg" alt="Tæsti home"></a>
       <div class="nav-links" role="menubar">
-        <a role="menuitem" href="/">Home</a>
-        <a role="menuitem" href="/shop">Shop</a>
-        <a role="menuitem" href="/about">About</a>
-        <a role="menuitem" href="/contact">Contact</a>
-        <a role="menuitem" href="/account">My Orders</a>
-        <a role="menuitem" href="/account/login">Sign in</a>
-        <a role="menuitem" href="/account/register">Register</a>
+        <a href="/" role="menuitem">Home</a>
+        <a href="/shop" role="menuitem">Shop</a>
+        <a href="/about" role="menuitem">About</a>
+        <a href="/contact" role="menuitem">Contact</a>
+        <a href="/account" role="menuitem">My Orders</a>
+        <a href="/account/login" role="menuitem">Sign in</a>
+        <a href="/account/register" role="menuitem">Register</a>
       </div>
     </nav>
   </header>
   <main id="main">
     <section class="hero">
-      <h1 class="headline-impact">Design the night<br>you deserve</h1>
-      <div class="tape">TEST FIRST • SIP SAFER • FEEL CUTE</div>
-      <p style="max-width:56ch;">The Tæsti Bar Bracelet combines fashion and function—offering discreet, on-the-go drink safety for young women.</p>
-      <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4);">
-        <a href="/shop" class="btn-primary">Shop Now</a>
-        <a href="#why" class="btn-ghost">Learn More</a>
+      <div class="hero-content">
+        <h1 class="headline-impact">Design the night<br>you deserve</h1>
+        <div class="tape">TEST FIRST • SIP SAFER • FEEL CUTE</div>
+        <p>The Tæsti Bar Bracelet combines fashion and function—offering discreet, on-the-go drink safety for young women.</p>
+        <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4);">
+          <a href="/shop" class="btn-primary">Shop Now</a>
+          <a href="#why" class="btn-ghost">Learn More</a>
+        </div>
       </div>
-      <img src="/assets/hero-image.png" alt="Tæsti bracelet overlapping headline" class="shadow-big" width="340" height="340" style="margin:auto;position:relative;z-index:1;">
+      <div class="hero-image">
+        <img src="/assets/hero-image.png" alt="Tæsti bracelet overlapping headline" width="340" height="340">
+      </div>
     </section>
     <section id="why" class="section">
       <h2 class="headline-impact">Why Tæsti?</h2>
@@ -58,7 +57,6 @@
         </span>
       </div>
     </div>
-    <!-- Footer (use same structure as other pages) -->
     <footer class="footer">
       <form class="newsletter" id="nl">
         <label for="nl-email">Get the Safer Night checklist</label>
