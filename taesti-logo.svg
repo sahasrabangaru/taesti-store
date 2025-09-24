@@ -1,13 +1,13 @@
-<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="5" y="30" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FF6FA5" letter-spacing="0">
-    T
-    <tspan font-weight="normal" dx="2">æsti</tspan>
-  </text>
-  <!-- Heart above the 'i' -->
-  <path d="M104 11
-    Q104 9 106 9
-    Q108 9 108 11
-    Q108 13 106 14
-    Q104 13 104 11
-    Z" fill="#FF6FA5"/>
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="34" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="40" fill="#e75480">Tæst</text>
+  <!-- The "i" stem -->
+  <rect x="120" y="14" width="7" height="26" rx="3.5" fill="#e75480"/>
+  <!-- Heart for the dot above "i" -->
+  <path d="M123.5 12
+           Q124 10.5 125 11
+           Q126 10.5 126.5 12
+           Q127 13.5 125 14.5
+           Q123 13.5 123.5 12
+           Z"
+        fill="#e75480"/>
 </svg>
