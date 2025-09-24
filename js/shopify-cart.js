@@ -30,30 +30,48 @@ window.taestiAddToCart = async function(productId, variantId, quantity = 1) {
 
 function taestiOpenCartOverlay(cart) {
   const drawer = document.querySelector('.cart-drawer');
-  if (drawer) {
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden', 'false');
-    drawer.querySelector('.cart-contents').innerHTML =
-      cart.lineItems.map(item => {
-        const variantId = item.variant.id.split("/").pop();
-        const prod = TAESTI_PRODUCTS[variantId];
-        return `
-          <div style="display:flex;align-items:center;margin-bottom:1.2rem;">
-            <img src="${prod ? prod.image : ''}" alt="${item.title}" style="width:80px;height:80px;border-radius:16px;box-shadow:0 2px 8px #e754801a;margin-right:1.5rem;object-fit:cover;">
-            <div>
-              <div style="font-weight:bold;font-size:1.25rem;">${prod ? prod.name : item.title} &times;${item.quantity}</div>
-              <div style="color:#E75480;font-weight:700;font-size:1.15rem;margin-top:2px;">$${prod ? prod.price : item.variant.price}</div>
-            </div>
-          </div>
-        `;
-      }).join('') +
-      `<div style="margin-top:1.4rem;font-size:1.2rem;">
-        <strong>Subtotal:</strong> $${Number(cart.subtotalPrice).toFixed(2)}
-      </div>
-      <div style="margin-top:2rem;">
-        <button class="checkout-btn" style="background:#E75480;color:#fff;font-size:1.2rem;padding:1rem 2.2rem;border-radius:9999px;border:none;cursor:pointer;font-weight:700;" onclick="openEmbeddedCheckout()">Checkout</button>
-      </div>`;
+  if (!drawer) return;
+
+  // Calculate subtotal robustly
+  let subtotal = 0;
+  if (cart && Array.isArray(cart.lineItems)) {
+    subtotal = cart.lineItems.reduce((sum, item) => {
+      const variantId = item.variant.id.split("/").pop();
+      const prod = TAESTI_PRODUCTS[variantId];
+      // Use item.variant.price if available, else prod.price
+      let price = 0;
+      if (item.variant.price !== undefined && item.variant.price !== null) {
+        price = parseFloat(item.variant.price);
+      } else if (prod && prod.price) {
+        price = parseFloat(prod.price);
+      }
+      const quantity = item.quantity || 1;
+      return sum + price * quantity;
+    }, 0);
   }
+
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+  drawer.querySelector('.cart-contents').innerHTML =
+    cart.lineItems.map(item => {
+      const variantId = item.variant.id.split("/").pop();
+      const prod = TAESTI_PRODUCTS[variantId];
+      return `
+        <div style="display:flex;align-items:center;margin-bottom:1.2rem;">
+          <img src="${prod ? prod.image : ''}" alt="${item.title}" style="width:80px;height:80px;border-radius:16px;box-shadow:0 2px 8px #e754801a;margin-right:1.5rem;object-fit:cover;">
+          <div>
+            <div style="font-weight:bold;font-size:1.25rem;">${prod ? prod.name : item.title} &times;${item.quantity}</div>
+            <div style="color:#E75480;font-weight:700;font-size:1.15rem;margin-top:2px;">$${prod ? prod.price : item.variant.price}</div>
+          </div>
+        </div>
+      `;
+    }).join('') +
+    `<div style="margin-top:1.4rem;font-size:1.2rem;">
+      <strong>Subtotal:</strong> $${subtotal.toFixed(2)}
+    </div>
+    <div style="margin-top:2rem;">
+      <button class="checkout-btn" style="background:#E75480;color:#fff;font-size:1.2rem;padding:1rem 2.2rem;border-radius:9999px;border:none;cursor:pointer;font-weight:700;" onclick="openEmbeddedCheckout()">Checkout</button>
+    </div>`;
 }
 
 function openEmbeddedCheckout() {
