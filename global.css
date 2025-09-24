@@ -232,6 +232,97 @@ header.taesti-navbar {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Hero Section */
+.hero {
+  width: 100vw;
+  max-width: 100%;
+  background: var(--bg);
+  padding-top: 3.2rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10;
+  padding: 0 1rem;
+}
+.hero-headline {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.08;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+.hero-title-main {
+  color: var(--text);
+  letter-spacing: .02em;
+}
+.hero-title-sub {
+  color: var(--pink);
+  font-style: italic;
+  font-family: 'Raleway', 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 0.12em;
+}
+.hero-desc {
+  font-size: 1.16rem;
+  margin-bottom: 2.1rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--text);
+}
+.hero-cta {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+@media (max-width: 700px) {
+  .hero-headline { font-size: 2.2rem; }
+  .hero-content { max-width: 98vw; }
+  .hero-cta { flex-direction: column; gap: 1rem; }
+}
+
+/* Marquee */
+.marquee {
+  width: 100vw;
+  overflow: hidden;
+  background: var(--muted);
+  border-radius: 0 0 32px 32px;
+  margin-bottom: 2.5rem;
+  font-size: 1.12rem;
+  color: var(--pink);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  height: 2.8em;
+  display: flex;
+  align-items: center;
+}
+.marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 14s linear infinite;
+  will-change: transform;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Section + grid */
 .section {
   max-width: var(--max-width);
@@ -262,6 +353,10 @@ header.taesti-navbar {
   background: var(--pink);
   border-radius: 2px;
   margin: 2rem 0;
+}
+.section-desc {
+  font-size: 1.12rem;
+  margin-bottom: 1.3rem;
 }
 
 /* Product grid and cards */
