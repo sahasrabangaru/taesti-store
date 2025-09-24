@@ -14,7 +14,7 @@
   <header class="taesti-navbar" role="banner">
     <nav class="taesti-nav" aria-label="Main navigation">
       <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
-        Tæsti<span class="taesti-heart">&#10084;&#65039;</span>
+        <img src="taesti-logo.svg" alt="Tæsti logo" />
       </a>
       <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
         <span class="taesti-burger-bar"></span>
@@ -33,7 +33,44 @@
     </nav>
   </header>
   <main id="main">
-    <!-- Your shop content here -->
+    <section class="section">
+      <h2>Shop Tæsti</h2>
+      <div class="marquee">
+        <span>
+          WAYS TO USE TÆSTI • PARTIES • BRUNCH • DATES • FESTIVALS • DORMS • GIRLS’ NIGHT • TRAVEL •
+        </span>
+      </div>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+        <div style="flex:1 1 250px;max-width:320px;">
+          <img src="bracelet.jpg" alt="Tæsti silicone bracelet with test-strip pod" width="220" height="220" style="border-radius:1em;box-shadow:0 12px 32px rgba(0,0,0,.10);margin-bottom:1rem;">
+          <h3>Bar Bracelet</h3>
+          <p>Chic, refillable, and discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
+          <a href="#" class="btn-primary">Add to Cart</a>
+        </div>
+        <div style="flex:1 1 250px;max-width:320px;">
+          <img src="refill.jpg" alt="Refill Pack for Tæsti bracelet" width="220" height="220" style="border-radius:1em;box-shadow:0 12px 32px rgba(0,0,0,.10);margin-bottom:1rem;">
+          <h3>Refill Pack</h3>
+          <p>Stay stocked and safe. Our refill packs fit all Tæsti bracelets and most other brands.</p>
+          <a href="#" class="btn-primary">Add to Cart</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <form class="newsletter" id="nl">
+        <label for="nl-email">Get the Safer Night checklist</label>
+        <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
+        <button class="btn-primary" type="submit">Join</button>
+      </form>
+      <script>
+        document.getElementById('nl')?.addEventListener('submit',(e)=>{
+          e.preventDefault();
+          const email = document.getElementById('nl-email').value.trim();
+          if(!email) return;
+          alert('Thanks! Check your inbox.');
+          e.target.reset();
+        });
+      </script>
+    </footer>
   </main>
 </body>
 </html>
