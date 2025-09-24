@@ -7,7 +7,7 @@
   <meta name="description" content="Shop the Tæsti Bar Bracelet and Refill Packs. Stylish safety for every night out." />
   <link rel="icon" href="account-logo.png" />
   <link rel="stylesheet" href="global.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
   <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -16,42 +16,47 @@
       <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
         <img src="taesti-logo.svg" alt="Tæsti logo" />
       </a>
+      <div class="taesti-nav-center">
+        <a href="index.html" class="taesti-link" aria-label="Home">Home</a>
+        <a href="shop.html" class="taesti-link" aria-label="Shop">Shop</a>
+        <a href="about.html" class="taesti-link" aria-label="About">About</a>
+        <a href="contact.html" class="taesti-link" aria-label="Contact">Contact</a>
+      </div>
       <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
         <span class="taesti-burger-bar"></span>
         <span class="taesti-burger-bar"></span>
         <span class="taesti-burger-bar"></span>
       </button>
-      <ul class="taesti-links" id="taesti-menu" role="menubar">
-        <li><a href="index.html" role="menuitem" aria-label="Home">Home</a></li>
-        <li><a href="shop.html" role="menuitem" aria-label="Shop">Shop</a></li>
-        <li><a href="about.html" role="menuitem" aria-label="About">About</a></li>
-        <li><a href="contact.html" role="menuitem" aria-label="Contact">Contact</a></li>
-      </ul>
-      <a href="account.html" class="taesti-account" aria-label="Account">
-        <img src="account-logo.png" alt="Account" />
-      </a>
+      <div class="taesti-nav-right">
+        <button class="taesti-profile-btn" aria-label="Account">
+          <img src="account-logo.png" alt="Account"/>
+        </button>
+      </div>
     </nav>
   </header>
   <main id="main">
     <section class="section">
-      <h2>Shop Tæsti</h2>
-      <div class="marquee">
-        <span>
-          WAYS TO USE TÆSTI • PARTIES • BRUNCH • DATES • FESTIVALS • DORMS • GIRLS’ NIGHT • TRAVEL •
-        </span>
-      </div>
-      <div style="display:flex;gap:2rem;flex-wrap:wrap;">
-        <div style="flex:1 1 250px;max-width:320px;">
-          <img src="bracelet.jpg" alt="Tæsti silicone bracelet with test-strip pod" width="220" height="220" style="border-radius:1em;box-shadow:0 12px 32px rgba(0,0,0,.10);margin-bottom:1rem;">
+      <h2 class="section-header">Shop <span class="highlight">Tæsti</span></h2>
+      <div class="divider"></div>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="bracelet.jpg" alt="Tæsti silicone bracelet with test-strip pod" width="220" height="220">
           <h3>Bar Bracelet</h3>
           <p>Chic, refillable, and discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
-          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="https://vk009q-ne.myshopify.com/cart/add?id=1758566044400" class="btn-primary" aria-label="Add Bar Bracelet to Cart">Add to Cart</a>
         </div>
-        <div style="flex:1 1 250px;max-width:320px;">
-          <img src="refill.jpg" alt="Refill Pack for Tæsti bracelet" width="220" height="220" style="border-radius:1em;box-shadow:0 12px 32px rgba(0,0,0,.10);margin-bottom:1rem;">
+        <div class="product-card">
+          <img src="refill.jpg" alt="Refill Pack for Tæsti bracelet" width="220" height="220">
           <h3>Refill Pack</h3>
           <p>Stay stocked and safe. Our refill packs fit all Tæsti bracelets and most other brands.</p>
-          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="https://vk009q-ne.myshopify.com/cart/add?id=1758566044401" class="btn-primary" aria-label="Add Refill Pack to Cart">Add to Cart</a>
+        </div>
+      </div>
+      <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
+        <button class="close-cart" aria-label="Close cart" onclick="document.querySelector('.cart-drawer').classList.remove('open');document.querySelector('.cart-drawer').setAttribute('aria-hidden','true');">×</button>
+        <div class="cart-contents"></div>
+        <div class="cart-actions">
+          <a class="checkout-btn" href="https://vk009q-ne.myshopify.com/cart" target="_blank" rel="noopener">Checkout</a>
         </div>
       </div>
     </section>
