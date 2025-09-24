@@ -31,12 +31,10 @@
 <body class="bg-taesti-light text-taesti-dark min-h-screen pt-28">
   <!-- Navigation Bar -->
   <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
-    <!-- Logo+Brand -->
     <a href="index.html" class="flex items-center">
-      <img src="taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
+      <img src="images/taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
       <span class="font-headline text-2xl font-extrabold text-taesti-pink tracking-wide">Tæsti</span>
     </a>
-    <!-- Navigation links -->
     <div class="hidden md:flex space-x-8 text-lg font-semibold">
       <a href="index.html" class="hover:text-taesti-pink transition">Home</a>
       <a href="shop.html" class="text-taesti-pink underline">Shop</a>
@@ -44,9 +42,8 @@
       <a href="about.html" class="hover:text-taesti-pink transition">About</a>
       <a href="contact.html" class="hover:text-taesti-pink transition">Contact</a>
     </div>
-    <!-- Account icon (top right) -->
     <a href="account.html" class="ml-4">
-      <img src="account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
+      <img src="images/account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
       <span class="sr-only">Account</span>
     </a>
   </nav>
@@ -56,13 +53,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
       <!-- Bracelet Card -->
       <div class="bg-taesti-light rounded-2xl shadow-lg p-8 flex flex-col items-center">
-        <img src="bracelet.jpg" alt="Bracelet" class="mb-4 rounded-xl shadow w-64" />
+        <img src="images/bracelet.jpg" alt="Bracelet" class="mb-4 rounded-xl shadow w-64" />
         <!-- Shopify Buy Button ONLY (no manual price or description) -->
         <div id="bracelet-buy" class="mt-4 w-full"></div>
       </div>
       <!-- Refill Pack Card -->
       <div class="bg-taesti-light rounded-2xl shadow-lg p-8 flex flex-col items-center">
-        <img src="refill.jpg" alt="Refill Pack" class="mb-4 rounded-xl shadow w-64" />
+        <img src="images/refill.jpg" alt="Refill Pack" class="mb-4 rounded-xl shadow w-64" />
         <!-- Shopify Buy Button ONLY (no manual price or description) -->
         <div id="refill-buy" class="mt-4 w-full"></div>
       </div>
@@ -85,13 +82,13 @@
         id: '8068637884463', // Bracelet
         node: document.getElementById('bracelet-buy'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: { /* You can style the button further if you want */ }
+        options: { }
       });
       ui.createComponent('product', {
         id: '8068637917231', // Refill Pack
         node: document.getElementById('refill-buy'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: { /* You can style the button further if you want */ }
+        options: { }
       });
     });
   </script>
