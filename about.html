@@ -14,7 +14,7 @@
   <header class="taesti-navbar" role="banner">
     <nav class="taesti-nav" aria-label="Main navigation">
       <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
-        Tæsti<span class="taesti-heart">&#10084;&#65039;</span>
+        <img src="taesti-logo.svg" alt="Tæsti logo" />
       </a>
       <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
         <span class="taesti-burger-bar"></span>
@@ -33,7 +33,51 @@
     </nav>
   </header>
   <main id="main">
-    <!-- Your about content here -->
+    <section class="section">
+      <h2>About Tæsti</h2>
+      <div class="tape">Fashion with a purpose</div>
+      <p>
+        Tæsti began with a simple but urgent question: how can we make nights out safer without sacrificing style? Too many students told us they felt stuck between carrying bulky safety kits or taking risks. We knew there had to be a better way.
+      </p>
+      <p>
+        So we designed the Tæsti Bar Bracelet—a chic, minimalist gold bracelet that hides a powerful secret: a slim compartment that carries drink test strips. With one small movement, you can discreetly test your drink for common drugs or allergens.
+      </p>
+      <h3>Why It Matters</h3>
+      <p>
+        College is supposed to be about connection, growth, and fun—not fear. But the reality is, situations can get risky fast. Tæsti exists to give you peace of mind and control, so you can focus on your friends, your laughter, your dance floor moves—whatever makes the night yours.
+      </p>
+      <h3>Our Promise</h3>
+      <ul>
+        <li><strong>Discreet Design:</strong> Looks like jewelry, acts like protection.</li>
+        <li><strong>Practical Safety:</strong> Standard 1×7 cm strips that fit into a sleek, refillable slot.</li>
+        <li><strong>Student-Born:</strong> Created by young women who saw the problem first-hand.</li>
+      </ul>
+      <h3>The Bigger Picture</h3>
+      <p>
+        Tæsti isn’t just a bracelet—it’s a statement. It says my safety matters, my friends’ safety matters, and we all deserve tools that fit our lives.<br>
+        We’re starting with one bracelet, but our vision is bigger: a world where safety is stylish, accessible, and always within reach.
+      </p>
+      <div style="margin-top:2rem;">
+        <a href="shop.html" class="btn-primary">Shop the Bracelet</a>
+        <a href="shop.html" class="btn-ghost">See the bracelets</a>
+      </div>
+    </section>
+    <footer class="footer">
+      <form class="newsletter" id="nl">
+        <label for="nl-email">Get the Safer Night checklist</label>
+        <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
+        <button class="btn-primary" type="submit">Join</button>
+      </form>
+      <script>
+        document.getElementById('nl')?.addEventListener('submit',(e)=>{
+          e.preventDefault();
+          const email = document.getElementById('nl-email').value.trim();
+          if(!email) return;
+          alert('Thanks! Check your inbox.');
+          e.target.reset();
+        });
+      </script>
+    </footer>
   </main>
 </body>
 </html>
