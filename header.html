@@ -1,19 +1,28 @@
-<header class="site-header">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <nav class="navbar" aria-label="Primary">
-    <a class="brand" href="/">
-      <img src="/assets/taesti-logo.svg" alt="Tæsti home">
+<!-- Google Fonts: Montserrat and Raleway -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+<header class="taesti-navbar" role="banner">
+  <nav class="taesti-nav" aria-label="Main navigation">
+    <!-- Logo -->
+    <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
+      Tæsti
     </a>
-    <div class="nav-links" role="menubar">
-      <a role="menuitem" href="/">Home</a>
-      <a role="menuitem" href="/shop">Shop</a>
-      <a role="menuitem" href="/about">About</a>
-      <a role="menuitem" href="/contact">Contact</a>
-      <a role="menuitem" href="/account">My Orders</a>
-      <a role="menuitem" href="/account/login">Sign in</a>
-      <a role="menuitem" href="/account/register">Register</a>
-    </div>
+    <!-- Hamburger for mobile -->
+    <button class="taesti-burger" aria-label="Open menu" aria-controls="taesti-menu" aria-expanded="false" tabindex="0">
+      <span class="taesti-burger-bar"></span>
+      <span class="taesti-burger-bar"></span>
+      <span class="taesti-burger-bar"></span>
+    </button>
+    <!-- Nav links -->
+    <ul class="taesti-links" id="taesti-menu" role="menubar">
+      <li><a href="index.html" role="menuitem" aria-label="Home">Home</a></li>
+      <li><a href="shop.html" role="menuitem" aria-label="Shop">Shop</a></li>
+      <li><a href="about.html" role="menuitem" aria-label="About">About</a></li>
+      <li><a href="contact.html" role="menuitem" aria-label="Contact">Contact</a></li>
+    </ul>
+    <!-- Account/profile icon -->
+    <a href="account.html" class="taesti-account" aria-label="Account">
+      <img src="account-logo.png" alt="Account" />
+    </a>
   </nav>
 </header>
-
-<main id="main">
