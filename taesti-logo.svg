@@ -1,4 +1,13 @@
-<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="19" cy="19" r="19" fill="#FF6FA5"/>
-  <text x="50%" y="56%" text-anchor="middle" alignment-baseline="middle" font-size="18" font-family="Inter, Arial, sans-serif" font-weight="bold" fill="#fff">T</text>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="5" y="30" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="bold" fill="#FF6FA5" letter-spacing="0">
+    T
+    <tspan font-weight="normal" dx="2">æsti</tspan>
+  </text>
+  <!-- Heart above the 'i' -->
+  <path d="M104 11
+    Q104 9 106 9
+    Q108 9 108 11
+    Q108 13 106 14
+    Q104 13 104 11
+    Z" fill="#FF6FA5"/>
 </svg>
