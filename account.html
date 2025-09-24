@@ -21,20 +21,23 @@
   </style>
 </head>
 <body>
-  <header role="banner" class="site-header" id="site-header">
-    <nav class="container" style="display:flex;align-items:center;justify-content:space-between;padding:2rem 0;">
+  <header class="site-header">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px">
       <a class="logo" href="/index.html" aria-label="Tæsti home">TÆSTI</a>
-      <ul style="display:flex;gap:2.5rem;list-style:none;letter-spacing:.07em;text-transform:uppercase;font-size:.96rem;margin:0;">
-        <li><a href="index.html" class="text-ink">Home</a></li>
-        <li><a href="shop.html" class="text-ink">Shop</a></li>
-        <li><a href="about.html" class="text-ink">About</a></li>
-        <li><a href="contact.html" class="text-ink">Contact</a></li>
-      </ul>
-      <a href="account.html" aria-label="Account">
-        <img src="account-logo.png" alt="Account page" width="40" height="40" style="border-radius:50%;object-fit:cover;border:2px solid var(--hotPink);margin-left:1rem;">
-      </a>
-    </nav>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/shop.html" id="nav-shop">Shop</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/account.html" aria-label="Account" class="account-link">👤</a>
+      </nav>
+    </div>
   </header>
+  <script>
+    if (location.pathname.endsWith('/shop.html')) {
+      document.getElementById('nav-shop')?.setAttribute('aria-current','page');
+    }
+  </script>
   <main class="account-main" id="main-content" role="main">
     <h1 class="headline-impact text-ink">Your Account</h1>
     <p class="text-lg mb-6">Sign in to view your order history, status, and manage purchases securely.</p>
@@ -42,17 +45,7 @@
       <a class="btn-primary" id="btn-login" href="#">Sign In</a>
       <a class="btn-ghost"   id="btn-register" href="#">Register</a>
     </div>
-    <a href="#" id="link-orders">Go to My Orders</a>
-    <script>
-      document.addEventListener('DOMContentLoaded',()=>{
-        const l=document.getElementById('btn-login');
-        const r=document.getElementById('btn-register');
-        if(l) l.href = ACCOUNT_LOGIN;
-        if(r) r.href = ACCOUNT_REGISTER;
-        const a=document.getElementById('link-orders');
-        if(a) a.href = ACCOUNT_ORDERS;
-      });
-    </script>
+    <a id="link-orders" href="#">Go to My Orders</a>
     <p class="mt-6 text-sm" style="color:rgba(17,17,17,.7);">After signing in you’ll be redirected to your Shopify account dashboard.</p>
   </main>
   <footer role="contentinfo">
@@ -64,9 +57,9 @@
       <div>
         <h4 class="text-xs font-bold mb-2 uppercase">Links</h4>
         <ul class="space-y-2 text-sm" style="list-style:none;padding:0;">
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/shop.html">Shop</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -76,17 +69,18 @@
           <input id="nl-email" name="email" type="email" required placeholder="you@example.com">
           <button class="btn-primary" type="submit">Join</button>
         </form>
+        <script>
+          document.getElementById('nl')?.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            const email = document.getElementById('nl-email').value.trim();
+            if(!email) return;
+            alert('Thanks! Check your inbox.');
+            e.target.reset();
+          });
+        </script>
       </div>
     </div>
     <div class="footer-flag">Refills Available</div>
   </footer>
-  <script>
-    document.getElementById('nl')?.addEventListener('submit',(e)=>{
-      e.preventDefault();
-      const email = document.getElementById('nl-email').value.trim();
-      if(!email) return;
-      alert('Thanks! Check your inbox.');
-    });
-  </script>
 </body>
 </html>
