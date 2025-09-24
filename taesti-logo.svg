@@ -1,13 +1,16 @@
 <svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="34" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="40" fill="#e75480">Tæst</text>
-  <!-- The "i" stem -->
-  <rect x="120" y="14" width="7" height="26" rx="3.5" fill="#e75480"/>
-  <!-- Heart for the dot above "i" -->
-  <path d="M123.5 12
-           Q124 10.5 125 11
-           Q126 10.5 126.5 12
-           Q127 13.5 125 14.5
-           Q123 13.5 123.5 12
-           Z"
-        fill="#e75480"/>
+  <style>
+    .text { font-family: 'Montserrat', Arial, sans-serif; font-weight:700; font-size:40px; fill: #e75480; }
+  </style>
+  <text x="0" y="36" class="text">Tæst</text>
+  <text x="120" y="36" class="text">i</text>
+  <!-- Heart as the i's dot -->
+  <g>
+    <path d="M129 22
+      C129 20.5 130.2 20 131 21
+      C131.8 20 133 20.5 133 22
+      C133 23.1 131.7 23.8 131 24.7
+      C130.3 23.8 129 23.1 129 22
+      Z" fill="#e75480"/>
+  </g>
 </svg>
