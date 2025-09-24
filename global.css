@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Anton:wght@700&family=Inter:wght@400;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  background: #FAF7F5;
+  color: #111111;
+}
+::selection {
+  background: #FF6FA5;
+  color: #fff;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+h1, h2, h3, .headline-impact {
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+section, .section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+@media (min-width: 768px) {
+  section, .section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+.gap-major {
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .gap-major {
+    gap: 4rem;
+  }
+}
+.max-w-prose {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-primary {
+  background: #FF6FA5;
+  color: #fff;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 1.125rem;
+  padding: 0.75em 2em;
+  border-radius: 999px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  box-shadow: 0 0 0 0 #FF6FA5;
+  transition: transform 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+.btn-primary:focus, .btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(255,111,165,.15);
+}
+.btn-ghost {
+  background: transparent;
+  color: #111111;
+  border: 2px solid #111111;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 1.125rem;
+  padding: 0.75em 2em;
+  border-radius: 999px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  outline: none;
+}
+.btn-ghost:focus, .btn-ghost:hover {
+  transform: scale(1.02);
+  border-color: #FF6FA5;
+  box-shadow: 0 4px 20px rgba(255,111,165,.12);
+}
+.shadow-big {
+  box-shadow: 0 30px 60px rgba(0,0,0,.15);
+}
+.tape {
+  position: relative;
+  display: inline-block;
+  background: #FF6FA5;
+  color: #fff;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  padding: 0.7em 2.5em;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  z-index: 2;
+  overflow: visible;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.tape:before, .tape:after {
+  content: "";
+  position: absolute;
+  top: 50%; width: 0; height: 0;
+  border-style: solid;
+}
+.tape:before {
+  left: -1.5em;
+  border-width: 0.9em 1.5em 0.9em 0;
+  border-color: transparent #FF6FA5 transparent transparent;
+  transform: translateY(-50%);
+}
+.tape:after {
+  right: -1.5em;
+  border-width: 0.9em 0 0.9em 1.5em;
+  border-color: transparent transparent transparent #FF6FA5;
+  transform: translateY(-50%);
+}
+.tape:hover {
+  transform: rotate(-6deg) scale(1.03);
+}
+.price-flag {
+  position: absolute;
+  top: 0; right: 0;
+  background: #FFC0D6;
+  color: #111111;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  padding: 0.5em 2em 0.5em 1em;
+  border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 2em;
+  font-weight: bold;
+  transform: rotate(20deg);
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,.07);
+}
+.headline-impact {
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: clamp(48px,8vw,112px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.marquee {
+  position: relative;
+  overflow: hidden;
+  background: #FFE8F0;
+  color: #111111;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1.8em 0;
+  width: 100%;
+  border-top: 2px solid #FFC0D6;
+  border-bottom: 2px solid #FFC0D6;
+}
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 24s linear infinite;
+}
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content { animation: none !important; }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.pull-quote {
+  position: relative;
+  font-size: 2.5rem;
+  font-style: italic;
+  max-width: 48rem;
+  margin: 0 auto;
+  color: #111;
+  padding: 2rem 2rem 2rem 5rem;
+}
+.pull-quote:before {
+  content: "“";
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 10rem;
+  line-height: 0.7;
+  color: #FF6FA5;
+  position: absolute;
+  left: 0.5rem;
+  top: -1.2rem;
+  z-index: 1;
+  opacity: 0.6;
+}
+.pull-quote .accent {
+  background: linear-gradient(90deg,#FF6FA5 0 60%,transparent 60% 100%);
+  color: #111;
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+.avatar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1.2em;
+}
+.avatar-chip img {
+  width: 2.5em; height: 2.5em;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.avatar-chip span {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.footer {
+  background: #FAF7F5;
+  color: #111;
+  padding: 4rem 0 3rem;
+  border-top: 2px solid #FFC0D6;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+.footer-flag {
+  position: absolute;
+  right: 0; bottom: 0;
+  transform: rotate(22deg) translateY(40%);
+  background: #FFC0D6;
+  color: #111111;
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  padding: 0.5em 2em 0.5em 1em;
+  border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 2em;
+  font-weight: bold;
+  z-index: 8;
+  box-shadow: 0 2px 6px rgba(0,0,0,.07);
+}
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+.smooth-scroll { scroll-behavior: smooth; }
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
