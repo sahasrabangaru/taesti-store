@@ -5,16 +5,35 @@
   <title>About Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'taesti-pink': '#ED4B7A',
+            'taesti-light': '#FCE4EC',
+            'taesti-dark': '#1A1A1A'
+          },
+          fontFamily: {
+            'headline': ['Montserrat', 'sans-serif'],
+            'body': ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', 'sans-serif'; }
+    h1, h2, h3 { font-family: 'Montserrat', 'sans-serif'; }
+  </style>
 </head>
 <body class="bg-taesti-light text-taesti-dark min-h-screen pt-28">
-  <!-- Navigation (same as index.html) -->
-  <nav class="flex items-center justify-between px-12 py-8 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+  <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
     <a href="index.html" class="flex items-center">
-      <img src="taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
       <span class="font-headline text-2xl font-extrabold text-taesti-pink tracking-wide">Tæsti</span>
     </a>
-    <div class="hidden md:flex space-x-10 text-lg font-semibold">
+    <div class="hidden md:flex space-x-8 text-lg font-semibold">
       <a href="index.html" class="hover:text-taesti-pink transition">Home</a>
       <a href="shop.html" class="hover:text-taesti-pink transition">Shop</a>
       <a href="blog/index.html" class="hover:text-taesti-pink transition">Blog</a>
@@ -22,22 +41,19 @@
       <a href="contact.html" class="hover:text-taesti-pink transition">Contact</a>
     </div>
     <a href="account.html" class="ml-4">
-      <img src="account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
+      <img src="images/account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
       <span class="sr-only">Account</span>
     </a>
   </nav>
-
   <main class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-16 mt-4">
     <h1 class="font-headline text-5xl font-black text-taesti-dark mb-4 leading-tight uppercase tracking-tight">About Tæsti</h1>
     <h2 class="font-headline text-xl text-taesti-pink mb-6 font-bold">Fashion with a purpose.</h2>
     <p class="text-xl mb-8">Tæsti began with a simple but urgent question: how can we make nights out safer without sacrificing style? Too many students told us they felt stuck between carrying bulky safety kits or taking risks. We knew there had to be a better way.</p>
     <p class="text-lg mb-8">So we designed the Tæsti Bar Bracelet—a chic, minimalist gold bracelet that hides a powerful secret: a slim compartment that carries drink test strips. With one small movement, you can discreetly test your drink for common drugs or allergens.</p>
-
     <section class="mb-8">
       <h3 class="font-headline text-2xl text-taesti-pink mb-2">Why It Matters</h3>
       <p class="mb-4">College is supposed to be about connection, growth, and fun—not fear. But the reality is, situations can get risky fast. Tæsti exists to give you peace of mind and control, so you can focus on your friends, your laughter, your dance floor moves—whatever makes the night yours.</p>
     </section>
-
     <section class="mb-8">
       <h3 class="font-headline text-2xl text-taesti-pink mb-2">Our Promise</h3>
       <ul class="list-disc ml-6 mb-4">
@@ -46,14 +62,12 @@
         <li class="mb-2"><strong>Student-Born:</strong> Created by young women who saw the problem first-hand.</li>
       </ul>
     </section>
-
     <section>
       <h3 class="font-headline text-2xl text-taesti-pink mb-2">The Bigger Picture</h3>
       <p>Tæsti isn’t just a bracelet—it’s a statement. It says my safety matters, my friends’ safety matters, and we all deserve tools that fit our lives.<br><br>
       We’re starting with one bracelet, but our vision is bigger: a world where safety is stylish, accessible, and always within reach.</p>
     </section>
   </main>
-
   <footer class="bg-white text-center py-8 text-lg text-taesti-dark font-semibold border-t fixed w-full left-0 bottom-0">
     &copy; Tæsti 2025 &mdash; Fashion with a Purpose
   </footer>
