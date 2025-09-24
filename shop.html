@@ -4,43 +4,44 @@
   <meta charset="UTF-8" />
   <title>Shop — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shop the Tæsti Bar Bracelet and Refill Packs. Stylish safety for every night out." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind config as above -->
   <script>
     tailwind.config = { /* ...same as index.html... */ }
   </script>
   <link rel="stylesheet" href="global.css">
+  <link rel="icon" href="bracelet.jpg">
 </head>
 <body>
-  <!-- Header (same as index.html) -->
   <header class="sticky top-0 z-50 bg-transparent transition-all border-b border-ink/10">
     <nav class="container flex items-center justify-between py-6">
       <span class="font-display text-3xl font-bold text-hotPink tracking-tight">TÆSTI</span>
       <ul class="flex items-center gap-6 uppercase text-xs tracking-caps">
         <li><a href="index.html" class="text-ink">Home</a></li>
-        <li><a href="shop.html" class="text-hotPink font-bold">Shop</a></li>
+        <li><a href="shop.html" class="text-hotPink font-bold" aria-current="page">Shop</a></li>
         <li><a href="about.html" class="text-ink">About</a></li>
         <li><a href="contact.html" class="text-ink">Contact</a></li>
-        <li><a href="shop.html" class="btn-primary">Book/Shop</a></li>
+        <li><a href="shop.html" class="btn-primary">Shop</a></li>
       </ul>
-      <img src="account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-hotPink ml-4" />
+      <img src="account-logo.png" alt="Account profile icon" class="h-8 w-8 object-cover rounded-full border-2 border-hotPink ml-4" />
     </nav>
   </header>
 
+  <!-- Shop Cards -->
   <main class="section container gap-major grid grid-cols-1 md:grid-cols-2">
     <!-- Bracelet Card -->
-    <div class="relative bg-white rounded-2xl shadow-big p-8 flex flex-col items-center justify-center">
+    <div class="relative bg-white rounded-2xl shadow-big p-8 flex flex-col items-center justify-center border-t-4 border-hotPink transition-all duration-150 hover:shadow-big hover:-translate-y-1">
       <div class="price-flag">$15</div>
-      <img src="bracelet.jpg" alt="Bracelet" class="mb-4 rounded-xl shadow w-64 transition-transform duration-150 hover:scale-105" />
+      <img src="bracelet.jpg" alt="Bracelet product" class="mb-4 rounded-xl shadow w-64 transition-transform duration-150 hover:scale-105" />
       <div class="font-display text-3xl mb-2">Bar Bracelet</div>
       <div class="text-hotPink text-xs uppercase mb-2">Drink Safety, Always</div>
       <p class="max-w-prose mb-4 text-sm text-ink">Chic, refillable, and discreet. Test your drink any time. Fits standard 1x7cm strips.</p>
       <button class="btn-primary mt-2">Add to Cart</button>
     </div>
     <!-- Refill Pack Card -->
-    <div class="relative bg-white rounded-2xl shadow-big p-8 flex flex-col items-center justify-center">
+    <div class="relative bg-white rounded-2xl shadow-big p-8 flex flex-col items-center justify-center transition-all duration-150 hover:shadow-big hover:-translate-y-1">
       <div class="price-flag">$6</div>
-      <img src="refill.jpg" alt="Refill Pack" class="mb-4 rounded-xl shadow w-64 transition-transform duration-150 hover:scale-105" />
+      <img src="refill.jpg" alt="Refill Pack product" class="mb-4 rounded-xl shadow w-64 transition-transform duration-150 hover:scale-105" />
       <div class="font-display text-3xl mb-2">Refill Pack</div>
       <div class="text-hotPink text-xs uppercase mb-2">More Test Strips</div>
       <p class="max-w-prose mb-4 text-sm text-ink">Stay stocked and safe. Our refill packs fit all Tæsti bracelets and most other brands.</p>
@@ -48,14 +49,14 @@
     </div>
   </main>
 
-  <!-- Marquee Section (reuse from index.html) -->
+  <!-- Marquee Section -->
   <div class="marquee" aria-label="Ways to use Tæsti">
     <div class="marquee-content">
       WAYS TO USE TÆSTI • PARTIES • BRUNCH • DATES • FESTIVALS • DORMS • GIRLS’ NIGHT • TRAVEL • WAYS TO USE TÆSTI • PARTIES • BRUNCH • DATES • FESTIVALS • DORMS • GIRLS’ NIGHT • TRAVEL •
     </div>
   </div>
 
-  <!-- Footer (reuse from index.html) -->
+  <!-- Footer -->
   <footer class="footer relative">
     <div class="footer-grid">
       <div>
@@ -65,7 +66,7 @@
       <div>
         <h4 class="text-xs font-bold mb-2 uppercase">Links</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="shop.html">Shop</a></li>
+          <li><a href="shop.html" aria-current="page">Shop</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
