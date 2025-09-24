@@ -29,6 +29,12 @@
         <span class="taesti-burger-bar"></span>
       </button>
       <div class="taesti-nav-right">
+        <!-- Add cart icon here -->
+        <button class="taesti-cart-btn" aria-label="View cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#E75480" viewBox="0 0 24 24">
+            <path d="M7 20c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-11.293-2l-.707-.707c-.39-.39-.39-1.024 0-1.414l.707-.707h15.586l.707.707c.39.39.39 1.024 0 1.414l-.707.707h-15.586zm15.586-2h-15.586l-1.293-1.293c-.39-.39-.39-1.024 0-1.414l.707-.707h15.586l.707.707c.39.39.39 1.024 0 1.414l-1.293 1.293z"/>
+          </svg>
+        </button>
         <button class="taesti-profile-btn" aria-label="Account">
           <img src="account-logo.png" alt="Account"/>
         </button>
@@ -63,20 +69,18 @@
           </button>
         </div>
       </div>
-      <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
-        <button class="close-cart" aria-label="Close cart" onclick="
-          this.closest('.cart-drawer').classList.remove('open');
-          this.closest('.cart-drawer').setAttribute('aria-hidden','true');
-        ">×</button>
-        <div class="cart-contents"></div>
-        <div class="cart-actions">
-          <a class="checkout-btn" href="https://vk009q-ne.myshopify.com/cart" target="_blank" rel="noopener">Checkout</a>
-        </div>
-      </div>
     </section>
     <footer class="footer">
       <!-- ...footer unchanged... -->
     </footer>
   </main>
+  <!-- Cart drawer markup goes outside the section, at end of body -->
+  <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
+    <button class="close-cart" aria-label="Close cart" onclick="
+      this.closest('.cart-drawer').classList.remove('open');
+      this.closest('.cart-drawer').setAttribute('aria-hidden','true');
+    ">×</button>
+    <div class="cart-contents"></div>
+  </div>
 </body>
 </html>
