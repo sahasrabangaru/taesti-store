@@ -5,15 +5,69 @@
   <title>Shop — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'taesti-pink': '#ED4B7A',
+            'taesti-light': '#FCE4EC',
+            'taesti-dark': '#1A1A1A'
+          },
+          fontFamily: {
+            'headline': ['Montserrat', 'sans-serif'],
+            'body': ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-pink-50 font-sans">
-  <nav><!-- Copy nav from index.html --></nav>
-  <main class="max-w-md mx-auto p-8">
-    <h2 class="text-2xl font-bold text-pink-600 mb-6">Shop Tæsti</h2>
-    <div id="bracelet-buy"></div>
-    <div id="refill-buy" class="mt-8"></div>
+<body class="bg-taesti-light text-taesti-dark min-h-screen pt-28">
+  <!-- Navigation (same as index.html) -->
+  <nav class="flex items-center justify-between px-12 py-8 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <a href="index.html" class="flex items-center">
+      <img src="taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
+      <span class="font-headline text-2xl font-extrabold text-taesti-pink tracking-wide">Tæsti</span>
+    </a>
+    <div class="hidden md:flex space-x-10 text-lg font-semibold">
+      <a href="index.html" class="hover:text-taesti-pink transition">Home</a>
+      <a href="shop.html" class="hover:text-taesti-pink transition">Shop</a>
+      <a href="blog/index.html" class="hover:text-taesti-pink transition">Blog</a>
+      <a href="about.html" class="hover:text-taesti-pink transition">About</a>
+      <a href="contact.html" class="hover:text-taesti-pink transition">Contact</a>
+    </div>
+    <a href="account.html" class="ml-4">
+      <img src="account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
+      <span class="sr-only">Account</span>
+    </a>
+  </nav>
+
+  <main class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-16 mt-4">
+    <h2 class="font-headline text-3xl font-bold text-taesti-pink mb-8">Shop Tæsti</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Bracelet Buy Button -->
+      <div class="flex flex-col items-center">
+        <img src="bracelet.jpg" alt="Bracelet" class="mb-4 rounded-xl shadow w-64" />
+        <h3 class="font-headline text-xl font-bold text-taesti-dark mb-2">Bracelet — Gold</h3>
+        <p class="text-taesti-pink font-bold mb-4">$39</p>
+        <div id="bracelet-buy"></div>
+      </div>
+      <!-- Refill Buy Button -->
+      <div class="flex flex-col items-center">
+        <img src="refill.jpg" alt="Refill Pack" class="mb-4 rounded-xl shadow w-64" />
+        <h3 class="font-headline text-xl font-bold text-taesti-dark mb-2">Refill Pack</h3>
+        <p class="text-taesti-pink font-bold mb-4">$12</p>
+        <div id="refill-buy"></div>
+      </div>
+    </div>
   </main>
-  <footer><!-- Copy footer from index.html --></footer>
+
+  <footer class="bg-white text-center py-8 text-lg text-taesti-dark font-semibold border-t fixed w-full left-0 bottom-0">
+    &copy; Tæsti 2025 &mdash; Fashion with a Purpose
+  </footer>
+
   <!-- Shopify Buy Button SDK -->
   <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
   <script>
