@@ -5,16 +5,58 @@
   <title>Blog — Tæsti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'taesti-pink': '#ED4B7A',
+            'taesti-light': '#FCE4EC',
+            'taesti-dark': '#1A1A1A'
+          },
+          fontFamily: {
+            'headline': ['Montserrat', 'sans-serif'],
+            'body': ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-pink-50 font-sans">
-  <nav><!-- Copy nav --></nav>
-  <main class="max-w-xl mx-auto p-8">
-    <h2 class="text-2xl font-bold text-pink-600 mb-6">Tæsti Blog</h2>
-    <ul>
-      <li><a href="first-post.html" class="text-pink-500 underline">Launching Tæsti: Our Story</a></li>
+<body class="bg-taesti-light text-taesti-dark min-h-screen pt-28">
+  <!-- Navigation (same as index.html) -->
+  <nav class="flex items-center justify-between px-12 py-8 bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <a href="../index.html" class="flex items-center">
+      <img src="../taesti-logo.png" alt="Tæsti Logo" class="h-10 w-auto mr-2" />
+      <span class="font-headline text-2xl font-extrabold text-taesti-pink tracking-wide">Tæsti</span>
+    </a>
+    <div class="hidden md:flex space-x-10 text-lg font-semibold">
+      <a href="../index.html" class="hover:text-taesti-pink transition">Home</a>
+      <a href="../shop.html" class="hover:text-taesti-pink transition">Shop</a>
+      <a href="index.html" class="text-taesti-pink underline">Blog</a>
+      <a href="../about.html" class="hover:text-taesti-pink transition">About</a>
+      <a href="../contact.html" class="hover:text-taesti-pink transition">Contact</a>
+    </div>
+    <a href="../account.html" class="ml-4">
+      <img src="../account-logo.png" alt="Account" class="h-8 w-8 object-cover rounded-full border-2 border-taesti-pink" />
+      <span class="sr-only">Account</span>
+    </a>
+  </nav>
+
+  <main class="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-12 mb-16 mt-4">
+    <h2 class="font-headline text-3xl font-bold text-taesti-pink mb-8">Tæsti Blog</h2>
+    <ul class="space-y-4">
+      <li>
+        <a href="first-post.html" class="text-taesti-pink underline text-lg font-bold">Launching Tæsti: Our Story</a>
+        <p class="text-taesti-dark mt-1">How our journey started and why safety matters.</p>
+      </li>
       <!-- Add more blog post links here -->
     </ul>
   </main>
-  <footer><!-- Copy footer --></footer>
+
+  <footer class="bg-white text-center py-8 text-lg text-taesti-dark font-semibold border-t fixed w-full left-0 bottom-0">
+    &copy; Tæsti 2025 &mdash; Fashion with a Purpose
+  </footer>
 </body>
 </html>
