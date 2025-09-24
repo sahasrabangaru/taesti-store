@@ -31,6 +31,19 @@ window.taestiAddToCart = async function(productId, variantId, quantity = 1) {
 function taestiOpenCartOverlay(cart) {
   const drawer = document.querySelector('.cart-drawer');
   if (!drawer) return;
+  // --- ADD THIS ---
+  console.log("Cart Object:", cart);
+  if (cart && Array.isArray(cart.lineItems)) {
+    cart.lineItems.forEach((item, idx) => {
+      console.log(`Line Item #${idx}:`, item);
+      console.log(`item.variant:`, item.variant);
+      console.log(`item.variant.price:`, item.variant?.price);
+      console.log(`item.price:`, item.price);
+      console.log(`item.quantity:`, item.quantity);
+    });
+  }
+  // --- END LOGGING ---
+
 
   // Calculate subtotal robustly
   let subtotal = 0;
