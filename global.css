@@ -52,6 +52,8 @@ section, .section {
   box-shadow: 0 0 0 0 #FF6FA5;
   transition: transform 0.15s, box-shadow 0.15s;
   outline: none;
+  border: none;
+  cursor: pointer;
 }
 .btn-primary:focus, .btn-primary:hover {
   transform: scale(1.02);
@@ -69,6 +71,7 @@ section, .section {
   letter-spacing: 0.12em;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   outline: none;
+  cursor: pointer;
 }
 .btn-ghost:focus, .btn-ghost:hover {
   transform: scale(1.02);
@@ -218,6 +221,7 @@ section, .section {
   color: #111;
   padding: 4rem 0 3rem;
   border-top: 2px solid #FFC0D6;
+  position: relative;
 }
 .footer-grid {
   display: grid;
