@@ -8,14 +8,12 @@
   <link rel="icon" href="account-logo.png"/>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900;700;600&family=Raleway:ital,wght@1,700&display=swap" as="style"/>
   <link rel="stylesheet" href="global.css"/>
-  <!-- Added for consistent cart functionality -->
   <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
   <script src="js/shopify.js" defer></script>
   <script src="js/shopify-cart.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
 <body>
-  <!-- header/nav same as index.html -->
   <header class="taesti-navbar">
     <nav class="taesti-nav" aria-label="Main navigation">
       <a href="index.html" class="taesti-logo" aria-label="Tæsti Home">
@@ -33,14 +31,14 @@
         <span class="taesti-burger-bar"></span>
       </button>
       <div class="taesti-nav-right">
-        <!-- Cart icon added here -->
-       <button class="taesti-cart-btn" aria-label="View cart">
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#E75480" viewBox="0 0 24 24">
-    <path d="M3 6h2l.4 2M7 6h14l-1.35 6.68a2 2 0 0 1-1.96 1.57H8.53a2 2 0 0 1-1.96-1.57L5.16 8.16"/>
-    <circle cx="9" cy="20" r="2"/>
-    <circle cx="17" cy="20" r="2"/>
-  </svg>
-</button>
+        <!-- Updated Cart Icon SVG -->
+        <button class="taesti-cart-btn" aria-label="View cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#E75480" viewBox="0 0 24 24">
+            <path d="M3 6h2l.4 2M7 6h14l-1.35 6.68a2 2 0 0 1-1.96 1.57H8.53a2 2 0 0 1-1.96-1.57L5.16 8.16"/>
+            <circle cx="9" cy="20" r="2"/>
+            <circle cx="17" cy="20" r="2"/>
+          </svg>
+        </button>
         <button class="taesti-profile-btn" aria-label="Account"><img src="account-logo.png" alt="Account"/></button>
       </div>
     </nav>
@@ -109,13 +107,27 @@
       </div>
     </footer>
   </main>
-  <!-- Cart drawer markup at end of body -->
+  <!-- Cart drawer with friendly checkout message -->
   <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
     <button class="close-cart" aria-label="Close cart" onclick="
       this.closest('.cart-drawer').classList.remove('open');
       this.closest('.cart-drawer').setAttribute('aria-hidden','true');
     ">×</button>
     <div class="cart-contents"></div>
+    <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    <span id="checkout-msg" style="display:none; color: var(--pink); margin-top: 1rem;">
+      Your secure checkout will open in a new tab.
+    </span>
   </div>
+  <script>
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+      var msg = document.getElementById('checkout-msg');
+      msg.style.display = 'inline';
+      setTimeout(function() {
+        window.open('https://vk009q-ne.myshopify.com/cart', '_blank');
+        msg.style.display = 'none';
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
