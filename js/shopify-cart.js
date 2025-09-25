@@ -31,7 +31,8 @@ window.taestiAddToCart = async function(productId, variantId, quantity = 1) {
 function taestiOpenCartOverlay(cart) {
   const drawer = document.querySelector('.cart-drawer');
   if (!drawer) return;
-  // --- ADD THIS ---
+
+  // --- LOGGING: DO NOT SKIP THIS ---
   console.log("Cart Object:", cart);
   if (cart && Array.isArray(cart.lineItems)) {
     cart.lineItems.forEach((item, idx) => {
@@ -44,19 +45,21 @@ function taestiOpenCartOverlay(cart) {
   }
   // --- END LOGGING ---
 
-
   // Calculate subtotal robustly
   let subtotal = 0;
   if (cart && Array.isArray(cart.lineItems)) {
     subtotal = cart.lineItems.reduce((sum, item) => {
       const variantId = item.variant.id.split("/").pop();
       const prod = TAESTI_PRODUCTS[variantId];
-      // Use item.variant.price if available, else prod.price
       let price = 0;
-      if (item.variant.price !== undefined && item.variant.price !== null) {
+
+      // Try all price sources (Shopify SDK may change shape!)
+      if (item.variant.price !== undefined && item.variant.price !== null && !isNaN(parseFloat(item.variant.price))) {
         price = parseFloat(item.variant.price);
-      } else if (prod && prod.price) {
+      } else if (prod && prod.price && !isNaN(parseFloat(prod.price))) {
         price = parseFloat(prod.price);
+      } else if (item.price && !isNaN(parseFloat(item.price))) {
+        price = parseFloat(item.price);
       }
       const quantity = item.quantity || 1;
       return sum + price * quantity;
