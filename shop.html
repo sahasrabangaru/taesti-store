@@ -108,14 +108,12 @@
   </main>
   <!-- Cart drawer with friendly checkout message and improved subtotal -->
   <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
-    <button class="close-cart" aria-label="Close cart" onclick="
-      this.closest('.cart-drawer').classList.remove('open');
-      this.closest('.cart-drawer').setAttribute('aria-hidden','true');
-    ">×</button>
-    <div class="cart-contents"></div>
-    <div class="cart-subtotal" style="font-weight:bold; font-size:1.25rem; margin-top:1.5rem;">
-      Subtotal: $0.00
-    </div>
+  <button class="close-cart" aria-label="Close cart" onclick="
+    this.closest('.cart-drawer').classList.remove('open');
+    this.closest('.cart-drawer').setAttribute('aria-hidden','true');
+  ">×</button>
+  <div class="cart-contents"></div>
+</div>
     <button class="checkout-btn" id="checkout-btn">Checkout</button>
     <span id="checkout-msg" style="display:none; color: var(--pink); margin-top: 1rem;">
       Your secure checkout will open in a new tab.
