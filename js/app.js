@@ -31,3 +31,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+// Marquee hover-to-pause, fade-in/slide on scroll, and hero animation
+
+// Marquee pause on hover (CSS animation-play-state handles most cases)
+document.querySelectorAll('.marquee-content').forEach(marquee => {
+  marquee.addEventListener('mouseenter', () => {
+    marquee.style.animationPlayState = 'paused';
+  });
+  marquee.addEventListener('mouseleave', () => {
+    marquee.style.animationPlayState = 'running';
+  });
+});
+
+// Fade-in animation for hero, sections, images, etc.
+function fadeInOnScroll() {
+  document.querySelectorAll('.fade-in').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('DOMContentLoaded', fadeInOnScroll);
+
+// Animate hero text on load
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.hero-content')?.classList.add('visible');
+});
