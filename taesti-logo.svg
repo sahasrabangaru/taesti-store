@@ -1,16 +1,6 @@
-<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .text { font-family: 'Montserrat', Arial, sans-serif; font-weight:700; font-size:40px; fill: #e75480; }
-  </style>
-  <text x="0" y="36" class="text">Tæst</text>
-  <text x="120" y="36" class="text">i</text>
-  <!-- Heart as the dot above the i -->
-  <g>
-    <path d="M127 22
-      C127 20.5 128.2 20 129 21
-      C129.8 20 131 20.5 131 22
-      C131 23.1 129.7 23.8 129 24.7
-      C128.3 23.8 127 23.1 127 22
-      Z" fill="#e75480"/>
-  </g>
+<svg width="250" height="70" viewBox="0 0 250 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="70" fill="none"/>
+  <text x="10" y="55" font-family="Montserrat, Arial, sans-serif" font-size="56" font-style="italic" font-weight="700" fill="#D7688A" letter-spacing="2">
+    TÆSTI
+  </text>
 </svg>
