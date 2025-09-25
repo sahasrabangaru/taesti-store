@@ -1,6 +1,11 @@
 <svg width="250" height="70" viewBox="0 0 250 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="250" height="70" fill="none"/>
-  <text x="10" y="55" font-family="Montserrat, Arial, sans-serif" font-size="56" font-style="italic" font-weight="700" fill="#D7688A" letter-spacing="2">
+  <text x="10" y="55"
+        font-family="Montserrat, Arial, sans-serif"
+        font-size="56"
+        font-style="italic"
+        font-weight="700"
+        fill="#D7688A"
+        letter-spacing="2">
     TÆSTI
   </text>
 </svg>
