@@ -106,43 +106,13 @@
       </div>
     </footer>
   </main>
-  <!-- Cart drawer with friendly checkout message and improved subtotal -->
+  <!-- Cart drawer UI: ONLY this block! -->
   <div class="cart-drawer" aria-hidden="true" aria-label="Shopping cart" role="dialog">
-  <button class="close-cart" aria-label="Close cart" onclick="
-    this.closest('.cart-drawer').classList.remove('open');
-    this.closest('.cart-drawer').setAttribute('aria-hidden','true');
-  ">×</button>
-  <div class="cart-contents"></div>
-</div>
-    <button class="checkout-btn" id="checkout-btn">Checkout</button>
-    <span id="checkout-msg" style="display:none; color: var(--pink); margin-top: 1rem;">
-      Your secure checkout will open in a new tab.
-    </span>
+    <button class="close-cart" aria-label="Close cart" onclick="
+      this.closest('.cart-drawer').classList.remove('open');
+      this.closest('.cart-drawer').setAttribute('aria-hidden','true');
+    ">×</button>
+    <div class="cart-contents"></div>
   </div>
-  <script>
-    // Subtotal fix: Example for Shopify BuyButton SDK, replace this with your actual cart subtotal logic.
-    function updateCartDrawer(cart) {
-      // Shopify Buy Button SDK: cart.lineItemsSubtotalPrice.amount
-      var subtotal = 0;
-      if (cart && cart.lineItemsSubtotalPrice && cart.lineItemsSubtotalPrice.amount) {
-        subtotal = parseFloat(cart.lineItemsSubtotalPrice.amount);
-      } else if (cart && cart.items) {
-        subtotal = cart.items.reduce(function(sum, item) {
-          return sum + (parseFloat(item.price) * (item.quantity || 1));
-        }, 0);
-      }
-      document.querySelector('.cart-subtotal').textContent = 'Subtotal: $' + subtotal.toFixed(2);
-    }
-    // Call updateCartDrawer(cart) when cart updates.
-
-    document.getElementById('checkout-btn').addEventListener('click', function() {
-      var msg = document.getElementById('checkout-msg');
-      msg.style.display = 'inline';
-      setTimeout(function() {
-        window.open('https://vk009q-ne.myshopify.com/cart', '_blank');
-        msg.style.display = 'none';
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
