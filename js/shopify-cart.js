@@ -45,7 +45,7 @@ function taestiOpenCartOverlay(cart) {
   }
   // --- END LOGGING ---
 
-  // FIX: Use TAESTI_PRODUCTS for price lookup
+  // Use TAESTI_PRODUCTS for price lookup
   let subtotal = 0;
   if (cart && Array.isArray(cart.lineItems)) {
     subtotal = cart.lineItems.reduce((sum, item) => {
@@ -78,29 +78,17 @@ function taestiOpenCartOverlay(cart) {
     </div>
     <div style="margin-top:2rem;">
       <button class="checkout-btn" style="background:#E75480;color:#fff;font-size:1.2rem;padding:1rem 2.2rem;border-radius:9999px;border:none;cursor:pointer;font-weight:700;" onclick="openEmbeddedCheckout()">Checkout</button>
+      <div style="margin-top:1rem;color:#E75480;text-align:center;font-size:1rem;">
+        Your secure checkout will open in a new tab.
+      </div>
     </div>`;
 }
 
+// Fix: Open Shopify checkout in a new tab (not iframe/modal) and show a message in cart
 function openEmbeddedCheckout() {
   const cart = window.taestiCart;
   if (cart && cart.webUrl) {
-    // Show iframe modal with Shopify checkout
-    const checkoutModal = document.createElement('div');
-    checkoutModal.style.position = 'fixed';
-    checkoutModal.style.top = '0';
-    checkoutModal.style.left = '0';
-    checkoutModal.style.width = '100vw';
-    checkoutModal.style.height = '100vh';
-    checkoutModal.style.background = 'rgba(0,0,0,0.5)';
-    checkoutModal.style.display = 'flex';
-    checkoutModal.style.justifyContent = 'center';
-    checkoutModal.style.alignItems = 'center';
-    checkoutModal.style.zIndex = '9999';
-    checkoutModal.innerHTML = `
-      <iframe src="${cart.webUrl}" style="width:90vw;height:90vh;border-radius:18px;border:none;background:#fff;"></iframe>
-      <button style="position:absolute;top:32px;right:32px;font-size:2rem;background:#fff;border:none;color:#E75480;padding:0.5rem 1rem;border-radius:50%;cursor:pointer" onclick="this.parentElement.remove()">&times;</button>
-    `;
-    document.body.appendChild(checkoutModal);
+    window.open(cart.webUrl, '_blank');
   }
 }
 
