@@ -45,22 +45,13 @@ function taestiOpenCartOverlay(cart) {
   }
   // --- END LOGGING ---
 
-  // Calculate subtotal robustly
+  // FIX: Use TAESTI_PRODUCTS for price lookup
   let subtotal = 0;
   if (cart && Array.isArray(cart.lineItems)) {
     subtotal = cart.lineItems.reduce((sum, item) => {
       const variantId = item.variant.id.split("/").pop();
       const prod = TAESTI_PRODUCTS[variantId];
-      let price = 0;
-
-      // Try all price sources (Shopify SDK may change shape!)
-      if (item.variant.price !== undefined && item.variant.price !== null && !isNaN(parseFloat(item.variant.price))) {
-        price = parseFloat(item.variant.price);
-      } else if (prod && prod.price && !isNaN(parseFloat(prod.price))) {
-        price = parseFloat(prod.price);
-      } else if (item.price && !isNaN(parseFloat(item.price))) {
-        price = parseFloat(item.price);
-      }
+      const price = prod && prod.price ? parseFloat(prod.price) : 0;
       const quantity = item.quantity || 1;
       return sum + price * quantity;
     }, 0);
@@ -77,7 +68,7 @@ function taestiOpenCartOverlay(cart) {
           <img src="${prod ? prod.image : ''}" alt="${item.title}" style="width:80px;height:80px;border-radius:16px;box-shadow:0 2px 8px #e754801a;margin-right:1.5rem;object-fit:cover;">
           <div>
             <div style="font-weight:bold;font-size:1.25rem;">${prod ? prod.name : item.title} &times;${item.quantity}</div>
-            <div style="color:#E75480;font-weight:700;font-size:1.15rem;margin-top:2px;">$${prod ? prod.price : item.variant.price}</div>
+            <div style="color:#E75480;font-weight:700;font-size:1.15rem;margin-top:2px;">$${prod ? prod.price : ''}</div>
           </div>
         </div>
       `;
