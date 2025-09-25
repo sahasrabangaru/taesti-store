@@ -3,12 +3,12 @@ const TAESTI_PRODUCTS = {
   "44536169431087": {
     name: "Tæsti Bar Bracelet — Gold",
     image: "bracelet.jpg",
-    price: "35.00"
+    price: "15.00"
   },
   "44536169758767": {
     name: "Refill Pack",
     image: "refill.jpg",
-    price: "10.00"
+    price: "6.00"
   }
 };
 
